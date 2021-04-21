@@ -67,7 +67,7 @@ def acabou():
     print()
     escrita_letra('Obrigado por realizar o teste!')
     time.sleep(k)
-    escrita_letra('Uma pasta chamada "Resultados Teste MBTI" foi criada na sua área de trabalho.')
+    escrita_letra('Uma pasta chamada "Resultados Teste MBTI" foi criada na pasta onde está localizado o aplicativo.')
     time.sleep(k)
     escrita_letra('Dentro dela, haverá um arquivo com os seus resultados nesse teste.')
     time.sleep(k)
