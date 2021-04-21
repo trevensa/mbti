@@ -3,3 +3,4 @@ Resultados Teste MBTI
 build
 __pycache__
 *.spec
+.vscode
