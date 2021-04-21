@@ -1,0 +1,64 @@
+Você possui um senso de dever e responsabilidade com suas tarefas: $Si$Ne
+Você prefere uma análise interna de situações ao invés de uma análise mais ampla: $Ti$Fe
+Seus valores se direcionam para o coletivo e priorizam a harmonia social: $Fe$Fi
+Você prefere explorar o conceito interno e a essência das coisas ao invés de se contentar somente com dados: $Ti$Te
+Você gosta de explorar novas experiências sensoriais que aguçam seus 5 sentidos e te fazem sentir adrenalina: $Se$Ni
+Você gosta de explorar novas ideias e conceitos e por isso acaba não finalizando as coisas que você começa: $Ne$Si
+Você preza por eficiência e objetividade: $Te$Fi
+Você gosta de explorar conceitos a respeito da complexidade humana: $Fi$Te
+Você possui um certo receio e sensibilidade quando se trata de novas experiências: $Si$Ne
+Você sente facilidade ao lidar com tarefas que exigem coordenação motora, mesmo que nunca tenha feito algo do tipo anteriormente: $Se$Ni
+Você atribui significados profundos às coisas ao seu redor: $Ni$Se
+Gosta de explorar conceitos abstratos: $Ni$Se
+Possui uma grande pluralidade de ideias na sua cabeça: $Ne$Si
+Você gosta de entender o funcionamento interno das coisas ao seu redor, a razão por trás de tudo: $Ti$Fe
+Você vive de forma pragmática, prezando principalmente pelo sucesso: $Te$Fi
+Seus valores se concentram no seu próprio indivíduo: $Fi$Te
+Sua base ética e moral é tão forte que é comum você projetar seus princípios nas pessoas ao seu redor: $Fi$Te
+Busca ações/pensamentos que ocasionem uma mudança efetiva no mundo: $Te$Fi
+Normas sociais são essenciais e você sente o dever de defendê-las: $Fe$Ti
+Você possui forte entendimento dos sentimentos alheios: $Fe$Ti
+Possui forte apego à rotina e à constância das atividades: $Si$Ne
+Você valoriza muito a aprovação social: $Fe$Ti
+Está aberto à explorar novos caminhos e possibilidades: $Ne$Si
+Você se sente em sintonia com seus estímulos sensoriais: $Se$Ni
+Quando em um ambiente/situação novo(a), você busca detalhes que apresentem semelhança com sua zona de conforto: $Si$Ne
+Você se considera uma pessoa analítica: $Ti$Fe
+Possui facilidade ao dialogar sobre sentimentos alheios: $Fe$Ti
+Você é bem adaptável aos ambientes em que se encontra: $Se$Ni
+Você apresenta suposições mentais super bem estruturadas: $Ni$Se
+Você consegue achar a ligação entre fatos que, à priori, parecem desconexos: $Ni$Se
+Você se perde em suas próprias lembranças, onde uma vai retomando outra, distanciando-o do presente: $Si$Ne
+Você gosta de entender a causa-efeito das coisas ao seu redor: $Ti$Fe
+Você gosta de refletir acerca da complexidade humana: $Fi$Te
+Enquanto você não finaliza as tarefas você sente um incômodo e um sentimento de incompleto: $Si$Ne
+Você busca novas experiências prazerosas para os seus 5 sentidos, explorando atividades concretas variadas: $Se$Ni
+Você possui habilidade quando se trata de interpretar e desenvolver simbolismos: $Ni$Se
+Você consegue visualizar um potencial abstrato a partir de uma ideia ou coisa já existente: $Ne$Si
+Um cheiro, som ou imagem é capaz de te teletransportar para alguma memória sua, mesmo que não seja marcante: $Si$Ne
+Você valoriza hierarquia e a considera vital para a eficiência e funcionamento de uma sociedade: $Te$Fi
+Antes de eficiência, vem o bem-estar coletivo: $Fe$Ti
+Você percebe e pega para você sentimentos alheios, sendo muito empático e solidário: $Fe$Ti
+Você é impulsivo e acaba agindo sem pensar nas consequências: $Se$Ni
+Você se garante na porrada com alguém: $Se$Ni
+Você se pega pensando profundamente no futuro e projetando planos futuros bem estruturados a ponto de esquecer do presente: $Ni$Se
+Seu pensamento, apesar de lógico, acaba sendo subjetivo e ausentando dados e provas concretas: $Ti$Fe
+Busca atividades que lhe façam sentir próximo e conectado com os outros: $Fe$Ti
+Você possui poder manipulativo emocional e o usa em situações para fazer outras pessoas se sentirem culpadas: $Fe$Ti
+Você não consegue manter foco e uma atividade constante por muito tempo sem se distrair com novas ideias: $Ne$Si
+Você gosta de dar ordens e delegar atividades aos demais: $Te$Fi
+Você sente que o mundo exige demais de você e que você não consegue suprir as demandas do mesmo: $Fi$Te
+Você é inflexível ou receoso quando se trata de experimentar novas experiências: $Si$Ne
+Embora você consiga montar uma linha de raciocínio muito bem estruturada na sua cabeça, esta é tão abstrata que você não encontra palavras para descrevê-la para alguém: $Ni$Se
+Você gosta de viver o presente e sente dificuldade de traçar planos futuros: $Se$Ni
+Você tem dificuldades em compreender e seguir as normais sociais: $Ti$Fe
+Ao se deparar com um problema, você visualiza diversas formas de solucioná-lo: $Ne$Si
+Você encontra dificuldade em lidar com sistemas externos: $Fi$Te
+Você tem dificuldade em se conectar com os seus 5 sentidos e a vivência no presente, se distanciando socialmente: $Ni$Se
+Explicar sua lógica para alguém não é seu ponto forte: $Ti$Fe
+Sua organização mental de suas ideias é clara: $Te$Fi
+Proteger sua própria moral e integridade é uma das suas maiores preocupações: $Fi$Te
+Você possui facilidade na hora de sintetizar e expressar (verbalmente) suas ideias: $Te$Fi
+Você apresenta certo desprezo por rotina e atividades fixadas: $Ne$Si
+Ter seus princípios violados é a maior motivação para você agir de alguma forma (reativa): $Fi$Te
+Você trabalha em picos de energia (com grande motivação no começo de algo novo mas com a perda gradual desse entusiasmo): $Ne$Si
