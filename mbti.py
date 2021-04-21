@@ -234,6 +234,8 @@ def escolher_aux(dominante,funcoes):
 #---------------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------------
+#Pega o arquivo 'INFOS' da internet, o qual contém as perguntas do teste
+#Traduz as linguagens e retorna uma lista cujos itens são as perguntas e as funções correspondentes
 
 def pegaPerguntas():
 
