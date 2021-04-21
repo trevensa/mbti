@@ -1,4 +1,4 @@
-import os, getpass, time
+import os, getpass, time, json, requests, base64
 from datetime import date, datetime
 
 #Constante de tempo
@@ -233,6 +233,20 @@ def escolher_aux(dominante,funcoes):
 
 #---------------------------------------------------------------------------------------------
 
+#---------------------------------------------------------------------------------------------
+
+def pegaPerguntas():
+
+    resposta_git = requests.get('https://api.github.com/repos/trevensa/mbti/contents/INFOS.txt')
+    traducao_py = json.loads(resposta_git.text)
+    perguntas = base64.b64decode(traducao_py['content']).decode('UTF-8')
+
+    perguntas = perguntas.split('\n')
+
+    return perguntas
+
+#---------------------------------------------------------------------------------------------
+
 def mbti():
 
 #---------------------------------------------------------------------------------------------
@@ -338,9 +352,7 @@ def mbti():
 #2ª: função cognitiva que receberá pontos
 #3ª: função cognitiva que perderá pontos
 
-    try: 
-
-        perg = open(f'{caminho_pasta}/INFOS.txt','r',encoding='utf8')
+    perg = pegaPerguntas()
 
 #Quantidade de perguntas:
 #Si: 8 | Se: 8 | Ni: 8 | Ne: 8
@@ -352,65 +364,55 @@ def mbti():
 #Cria a váriavel que corresponde ao número da pergunta
 #Cria a bool 'dnv' que é utilizada para que o usuário não digite valores fora do esperado
 
-        pos_perg = 1 
+    pos_perg = 1 
 
-        for linha in perg:
+    for linha in perg:
 
-            dnv = True
-            first = True
+        dnv = True
+        first = True
 
-            linha = linha.replace('\n','')
-            pergunta = linha[:-6]
-            adc = linha[-5:-3]
-            rem = linha[-2:]
+        pergunta = linha[:-6]
+        adc = linha[-5:-3]
+        rem = linha[-2:]
 
-            while dnv:
+        while dnv:
 
-                try:
-                    
-                    if first:
+            try:
+                
+                if first:
 
-                        first = False
-                        pontos = int(float(input(f'{pos_perg}. {pergunta}')))
+                    first = False
+                    pontos = int(input(f'{pos_perg}. {pergunta}'))
 
-                    else:
+                else:
 
-                        pontos = int(float(input('Isso não é uma resposta válida. Por favor, digite um número dentre -2,-1,0,1 e 2: ')))
+                    pontos = int(input('Isso não é uma resposta válida. Por favor, digite um número dentre -2,-1,0,1 e 2: '))
 
-                    while pontos != -2 and pontos != -1 and pontos != 0 and pontos != 1 and pontos != 2:
+                if pontos < -2 or pontos > 2:
 
-                        pontos = int(float(input('Isso não é uma resposta válida. Por favor, digite um número dentre -2,-1,0,1 e 2: ')))
+                    raise ValueError
 
-                    dnv = False
+                dnv = False
 
-                except ValueError:
+            except ValueError:
 
-                    pass
+                pass
 
-            funcoes[adc] += pontos
+        funcoes[adc] += pontos
 
-            if abs(pontos) == 2:
+        if abs(pontos) == 2:
 
-                funcoes[rem] -= pontos
+            funcoes[rem] -= pontos
 
 #---------------------------------------------------------------------------------------------
 #Chama a função 'escrita' que traduz o que representa o ponto da pessoa
 #Escreve a pergunta e a resposta da pessoa no arquivo
 
-            escrita = resposta(pontos)
+        escrita = resposta(pontos)
 
-            arq.write(f'{pergunta}| Frequência: {escrita}\n')
+        arq.write(f'{pergunta}| Frequência: {escrita}\n')
 
-            pos_perg += 1
-
-#---------------------------------------------------------------------------------------------
-#Fecha o arquivo de perguntas
-
-    finally:
-
-        perg.close()
-
-#---------------------------------------------------------------------------------------------
+        pos_perg += 1
 
 #---------------------------------------------------------------------------------------------
 
