@@ -62,3 +62,11 @@ Você possui facilidade na hora de sintetizar e expressar (verbalmente) suas ide
 Você apresenta certo desprezo por rotina e atividades fixadas: $Ne$Si
 Ter seus princípios violados é a maior motivação para você agir de alguma forma (reativa): $Fi$Te
 Você trabalha em picos de energia (com grande motivação no começo de algo novo mas com a perda gradual desse entusiasmo): $Ne$Si
+Você acredita que deve-se possuir um código de conduta a ser seguido com base em fatores e dados objetivos: $Te$Fi
+Você possui capacidade e interesse em explorar dados já existentes, reposicionando-os e explorando novas combinações de informações já existentes: $Te$Ti
+Você gosta de absorver o máximo possível de informações externas do ambiente em que você está: $Ne$Si
+Você apresenta uma inteligência espacial considerável: $Se$Ni
+Você possui dificuldade de lidar objetivamente com os acontecimentos ao seu redor, buscando extrair algum significado de tudo ao sue redor: $Ni$Se
+Você tem dificuldade em compreender e lidar com os sentimentos dos outros: $Ti$Fe
+Se você já possui uma forma de realizar uma atividade, foge do seu interesse explorar novos caminhos para a realização da mesma: $Si$Ne
+Você possui dificuldade, enquanto conversa com alguém, de saber o que a pessoa está pensando das coisas que você está dizendo: $Fi$Te
