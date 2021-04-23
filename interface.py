@@ -1,5 +1,8 @@
 from tkinter import *
 
+#---------------------------------------------------------------------------------------------
+#Função que obtém as perguntas para o teste de um arquivo txt ja existente
+
 def pegaPerguntas():
 
     try:
@@ -13,6 +16,11 @@ def pegaPerguntas():
         f.close()
 
     return perguntas
+
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
+#Função responsável por verificar se a resposta digitada é válida ou não
 
 def corrigeResposta(resposta):
 
@@ -30,9 +38,73 @@ def corrigeResposta(resposta):
 
         return 'INVALIDO'
 
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
+#Criação de uma classe 'Aplicativo' que contém a interface do teste
+
 class Aplicativo:
 
-    def __init__(self, master=None):
+#---------------------------------------------------------------------------------------------
+#Montagem do layout da página 1 do aplicativo
+#Essa página contém uma saudação à quem está realizando o teste
+
+    def __init__(self,master=None):
+
+        self.bloco1 = Frame(master)
+        self.bloco1['width'] = 700
+        self.bloco1['height'] = 350
+        self.bloco1.pack()
+
+        self.bemvindo = Label(self.bloco1)
+        self.bemvindo['text'] = 'Bem-Vindo ao teste de MBTI!'
+        self.bemvindo['font'] = ('Arial','20','bold')
+        self.bemvindo.pack()
+
+        self.bloco2 = Frame(master)
+        self.bloco2['width'] = 700
+        self.bloco2['height'] = 350
+        self.bloco2.pack()
+
+        self.iniciar_teste = Button(self.bloco2)
+        self.iniciar_teste['width'] = 20
+        self.iniciar_teste['text'] = 'Iniciar o teste'
+        self.iniciar_teste['command'] = self.segundaPagina
+        self.iniciar_teste.pack(side=RIGHT)
+
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
+#Destruição do layout anterior (página 1) e montagem de um novo para a página 2
+#Esta página contém as instruções a respeito do teste e sua realização
+
+    def segundaPagina(self,master=None):
+
+        self.bemvindo.destroy()
+        self.iniciar_teste.destroy()
+
+        self.instrucoes = Label(self.bloco1)
+        self.instrucoes['text'] = 'Trocamos de Pagina'
+        self.instrucoes.pack()
+
+        self.comecar = Button(self.bloco2)
+        self.comecar['text'] = 'Começar o questionário'
+        self.comecar['width'] = 25
+        self.comecar['command'] = self.terceiraPagina
+        self.comecar.pack(side=RIGHT)
+
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
+#Destruição do layout anterior (página 2) e montagem de um novo para a página 3
+#Esta página apresenta as perguntas e um possui espaço para a pessoa colocar sua resposta
+
+    def terceiraPagina(self, master=None):
+
+        self.bloco1.destroy()
+        self.bloco2.destroy()
+        self.instrucoes.destroy()
+        self.comecar.destroy()
 
         self.pos = 1
         self.k = 0
@@ -128,6 +200,44 @@ class Aplicativo:
         self.progresso['height'] = 5
         self.progresso.pack()
 
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
+#Destruição do layout anterior (página 3) e montagem de um novo para a página 4
+#Esta página informa onde os resultados estarão disponibilizados e se despede
+
+    def ultimaPagina(self,master=None):
+
+        self.quadrante1.destroy()
+        self.pergunta.destroy()
+        self.status.destroy()
+        self.quadrante2.destroy()
+        self.resposta.destroy()
+        self.aviso.destroy()
+        self.quadrante3.destroy()
+        self.confirma.destroy()
+        self.proximo.destroy()
+        self.anterior.destroy()
+        self.espaco.destroy()
+        self.quadrante4.destroy()
+        self.termina.destroy()
+        self.barrinha.destroy()
+        self.progresso.destroy()
+
+        self.quadro1 = Frame(master)
+        self.quadro1.pack()
+
+        self.despedida = Label(self.quadro1)
+        self.despedida['text'] = 'Obrigado por realizar o teste!\nSeus resultados estão em uma pasta\nlocalizada junto com seu aplicativo.'
+        self.despedida['font'] = ('Verdana','20','bold')
+        self.despedida.pack()
+
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
+#Método responsável por somar 1 ao contador 'k'
+#Com isso, a pergunta, a página, o status de resposta e o aviso são atualizados
+
     def proximaMensagem(self):
 
         if self.k < len(self.mensagens)-1:
@@ -139,6 +249,12 @@ class Aplicativo:
         self.status['text'] = 'Sua resposta: ' + self.respostas[self.k]
         self.aviso['text'] = ''
 
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
+#Método responsável por subtrair 1 do contador 'k'
+#Com isso, a pergunta, a página, o status de resposta e o aviso são atualizados
+
     def anteriorMensagem(self):
 
         if self.k > 0:
@@ -149,6 +265,16 @@ class Aplicativo:
         self.progresso['text'] = str(self.pos) + '/' + str(len(self.mensagens))
         self.status['text'] = 'Sua resposta: ' + self.respostas[self.k]
         self.aviso['text'] = ''
+
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
+#Método responsável por captar a resposta digitada na caixa de texto
+#A função 'corrigeResposta' é chamada para verificar a validez do que foi digitado pelo usuário
+#Caso seja inválida, um aviso na tela aparece
+#Caso seja válida, a resposta é adicionada na lista 'respostas'
+#O status de resposta é alterado e o método 'proximaMensagem' é chamado
+#Em ambos os casos, o conteúdo digitado é apagado da caixa de texto
 
     def enviaResposta(self):
 
@@ -172,7 +298,12 @@ class Aplicativo:
 
         self.resposta.delete(first='0',last='end')
 
-        print(self.barra)
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
+#Método responsável por verificar se todas perguntas foram respondidas
+#Em caso afirmativo, executa-se o método 'ultimaPagina'
+#Caso contrário, um aviso aparece na tela
 
     def finalizaTeste(self):
 
@@ -180,15 +311,22 @@ class Aplicativo:
 
         if vazios == 0:
 
-            print('Tudo foi respondido')
+            self.ultimaPagina()
 
         else:
 
             self.aviso['text'] = 'Responda todas as perguntas antes de finalizar o teste'
 
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
+#Inicialização do Aplicativo com o módulo Tkinter
+#Definição do nome do teste e do tamanho da janela
 
 root = Tk()
 Aplicativo(root)
 root.title('Teste MBTI')
+root.geometry('600x600')
 root.mainloop()
 
+#---------------------------------------------------------------------------------------------
