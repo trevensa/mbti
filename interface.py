@@ -58,19 +58,20 @@ class Aplicativo:
 
         self.bemvindo = Label(self.bloco1)
         self.bemvindo['text'] = 'Bem-Vindo ao teste de MBTI!'
-        self.bemvindo['font'] = ('Arial','20','bold')
+        self.bemvindo['font'] = ('Berlin Sans','20','bold')
+        self.bemvindo['pady'] = 200
         self.bemvindo.pack()
+
+        self.iniciar_teste = Button(self.bloco1)
+        self.iniciar_teste['width'] = 20
+        self.iniciar_teste['text'] = 'Iniciar o teste'
+        self.iniciar_teste['command'] = self.segundaPagina
+        self.iniciar_teste.pack(side=BOTTOM)
 
         self.bloco2 = Frame(master)
         self.bloco2['width'] = 700
         self.bloco2['height'] = 350
         self.bloco2.pack()
-
-        self.iniciar_teste = Button(self.bloco2)
-        self.iniciar_teste['width'] = 20
-        self.iniciar_teste['text'] = 'Iniciar o teste'
-        self.iniciar_teste['command'] = self.segundaPagina
-        self.iniciar_teste.pack(side=RIGHT)
 
 #---------------------------------------------------------------------------------------------
 
@@ -84,14 +85,23 @@ class Aplicativo:
         self.iniciar_teste.destroy()
 
         self.instrucoes = Label(self.bloco1)
-        self.instrucoes['text'] = 'Trocamos de Pagina'
+        self.instrucoes['font'] = ('Berlin Sans','15','bold')
+        self.instrucoes['pady'] = 25
+        self.instrucoes['text'] = 'Instruções'
         self.instrucoes.pack()
+
+        self.instrucoes2 = Label(self.bloco1)
+        self.instrucoes2['font'] = ('Calibri','12')
+        self.instrucoes2['pady'] = 10
+        self.instrucoes2['justify'] = 'left'
+        self.instrucoes2['text'] = 'O teste é composto de 72 questões, as quais você deve responder um número de\n -2 a 2 com base na frequência em que você realiza o que está escrito.\n\nLegenda:\n\n-2 = Raramente\n-1 = Ocasionalmente\n0 = Neutro\n1 = Comumente\n2 = Muito frequentemente\n\nTente ser honesto com as respostas mesmo que elas te desagradem\nou te envergonhem de alguma forma. Vale ressaltar que, nesses casos, geralmente\na resposta verdadeira é aquela que você sente desconforto em pensar.\n\nBom teste!\n\n\n'
+        self.instrucoes2.pack(side=BOTTOM)
 
         self.comecar = Button(self.bloco2)
         self.comecar['text'] = 'Começar o questionário'
         self.comecar['width'] = 25
         self.comecar['command'] = self.terceiraPagina
-        self.comecar.pack(side=RIGHT)
+        self.comecar.pack()
 
 #---------------------------------------------------------------------------------------------
 
