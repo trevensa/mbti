@@ -107,12 +107,12 @@ class Aplicativo:
         self.instrucoes.pack()
 
         self.instrucoes2 = Label(self.bloco1)
-        self.instrucoes2['font'] = ('Calibri','12')
+        self.instrucoes2['font'] = ('Courier New','12')
         self.instrucoes2['bg'] = '#99ccff'
         self.instrucoes2['pady'] = 10
         self.instrucoes2['padx'] = 30
         self.instrucoes2['justify'] = 'left'
-        self.instrucoes2['text'] = 'O teste é composto de 72 questões, as quais você deve responder um número de\n-2 a 2 com base na frequência em que você realiza o que está escrito.\n\nLegenda:\n\n-2 = Raramente\n-1 = Ocasionalmente\n0 = Neutro\n1 = Comumente\n2 = Muito frequentemente\n\nTente ser honesto com as respostas mesmo que elas te desagradem\nou te envergonhem de alguma forma. Vale ressaltar que, nesses casos, geralmente\na resposta verdadeira é aquela que você sente desconforto em pensar.\n\nBom teste!\n\n\n'
+        self.instrucoes2['text'] = 'O teste é composto de 72 questões, as quais você\ndeve responder um número de -2 a 2 com base\nna frequência em que você realiza o que está escrito.\n\nLegenda:\n\n-2 = Raramente\n-1 = Ocasionalmente\n0 = Neutro\n1 = Comumente\n2 = Muito frequentemente\n\nTente ser honesto com as respostas mesmo que elas te\ndesagradem ou te envergonhem de alguma forma.\nVale ressaltar que, nesses casos, geralmente\na resposta verdadeira é aquela que você sente\ndesconforto em pensar.\n\nBom teste!\n\n\n'
         self.instrucoes2.pack(side=BOTTOM)
 
         self.bloco2 = Frame(master)
