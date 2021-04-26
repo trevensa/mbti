@@ -639,6 +639,27 @@ class Aplicativo:
         self.bloco4['bg'] = '#99ccff'
         self.bloco4.pack()
 
+        self.ir_pagina = Label(self.bloco4)
+        self.ir_pagina['text'] = 'Insira a página de destino: '
+        self.ir_pagina['bg'] = '#99ccff'
+        self.ir_pagina['font'] = ('Courier New','11','bold')
+        self.ir_pagina.pack(padx=(20,20),pady=(20,5))
+
+        self.n_pagina = Entry(self.bloco4)
+        self.n_pagina['width'] = 15
+        self.n_pagina['justify'] = ('center')
+        self.n_pagina.pack(pady=(5,5))
+
+        self.ir = Button(self.bloco4)
+        self.ir['width'] = 10
+        self.ir['text'] = 'Ir'
+        self.ir['font'] = ('Calibri','12','bold')
+        self.ir['bd'] = 3
+        self.ir['relief'] = 'raised'
+        self.ir['cursor'] = 'hand2'
+        self.ir['bg'] = '#cce6ff'
+        self.ir.pack(padx=(20,20),pady=(5,5))
+
         self.termina = Button(self.bloco4)
         self.termina['width'] = 20
         self.termina['text'] = 'Finalizar Teste'
@@ -648,13 +669,13 @@ class Aplicativo:
         self.termina['cursor'] = 'hand2'
         self.termina['bg'] = '#cce6ff'
         self.termina['command'] = self.finalizaTeste
-        self.termina.pack(pady=(100,10))
+        self.termina.pack(pady=(25,10))
 
         self.barrinha = Label(self.bloco4, text=''.join(self.pos_barra))
         self.barrinha['fg'] = '#00264d'
         self.barrinha['bg'] = '#99ccff'
         self.barrinha['font'] = ('Courier New', '8')
-        self.barrinha.pack(pady=(10,70))
+        self.barrinha.pack(pady=(10,35))
 
         self.progresso = Label(self.bloco4, text= str(self.k+1) + '/' + str(len(self.mensagens)))
         self.progresso['font'] = ('Courier New','10','italic')
@@ -683,6 +704,9 @@ class Aplicativo:
         self.termina.destroy()
         self.barrinha.destroy()
         self.progresso.destroy()
+        self.ir_pagina.destroy()
+        self.n_pagina.destroy()
+        self.ir.destroy()
 
         self.bloco1 = Frame(master)
         self.bloco1['bg'] = '#99ccff'
