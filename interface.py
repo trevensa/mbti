@@ -603,17 +603,17 @@ class Aplicativo:
         self.progresso.destroy()
 
         self.bloco1 = Frame(master)
+        self.bloco1['bg'] = '#99ccff'
         self.bloco1.pack()
 
         self.despedida = Label(self.bloco1)
         self.despedida['bg'] = '#99ccff'
-        self.despedida['pady'] = 250
         self.despedida['text'] = 'Obrigado por realizar o teste!\nSeus resultados estão em uma pasta\nlocalizada junto com seu aplicativo.\n\nDigite seu nome:'
         self.despedida['font'] = ('Century Gothic','20','bold')
-        self.despedida.pack()
+        self.despedida.pack(pady=(100,50))
 
         self.nome = Entry(self.bloco1)
-        self.nome['width'] = 15
+        self.nome['width'] = 25
         self.nome['justify'] = ('center')
         self.nome.pack()
 
@@ -625,13 +625,13 @@ class Aplicativo:
         self.aviso.pack()
 
         self.envia_nome = Button(self.bloco1)
-        self.termina['width'] = 20
-        self.termina['text'] = 'Finalizar Teste'
-        self.termina['font'] = ('Calibri','12','bold')
-        self.termina['bd'] = 3
-        self.termina['relief'] = 'raised'
-        self.termina['cursor'] = 'hand2'
-        self.termina['bg'] = '#cce6ff'
+        self.envia_nome['width'] = 20
+        self.envia_nome['text'] = 'Escolher Nome'
+        self.envia_nome['font'] = ('Calibri','12','bold')
+        self.envia_nome['bd'] = 3
+        self.envia_nome['relief'] = 'raised'
+        self.envia_nome['cursor'] = 'hand2'
+        self.envia_nome['bg'] = '#cce6ff'
         self.envia_nome['command'] = self.enviaNome
         self.envia_nome.pack(side=BOTTOM,pady=(25,25))
 
@@ -736,10 +736,17 @@ class Aplicativo:
         if f == 'EXISTE':
 
             self.aviso['text'] = 'Já existe um arquivo com esse nome. Selecione outro.'
+            self.nome.delete(first='0',last='end')
 
         else:
 
+            self.aviso['fg'] = '#009933'
+            self.aviso['text'] = 'Arquivo criado!'
 
+            self.nome.delete(first='0',last='end')
+
+            f.write('ESCREVEU')
+            f.close()
 
 #---------------------------------------------------------------------------------------------
 #Inicialização do Aplicativo com o módulo Tkinter
