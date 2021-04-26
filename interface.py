@@ -109,6 +109,53 @@ def escreveCabecalho(nome_arquivo,arq):
 #---------------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------------
+#Função que 'traduz' o ponto do usuário para a palavra associada àquele valor
+
+def traduzPontos(pontos):
+
+    if pontos == -2:
+        return 'Raramente'
+    
+    elif pontos == -1:
+        return 'Ocasionalmente'
+
+    elif pontos == 0:
+        return 'Neutro'
+
+    elif pontos == 1:
+        return 'Comumente'
+
+    elif pontos == 2:
+        return 'Muito Frequentemente'
+
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
+#Função que contabiliza os pontos do usuário
+
+def contabilizaPontos(perguntas,respostas,arq):
+
+    funcoes = {'Si': 0, 'Se': 0, 'Ni': 0, 'Ne': 0, 'Ti': 0, 'Te': 0, 'Fi': 0, 'Fe': 0}
+
+    for linha in range(len(perguntas)):
+
+        pergunta = perguntas[linha][:-6]
+        adc = perguntas[linha][-5:-3]
+        rem = perguntas[linha][-2:]
+
+        pontos = int(respostas[linha])
+        escrita = traduzPontos(pontos)
+
+        funcoes[adc] += pontos
+        funcoes[rem] -= pontos
+
+        arq.write(f'{pergunta}| {escrita}\n')
+    
+    return funcoes
+
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
 #Criação de uma classe 'Aplicativo' que contém a interface do teste
 
 class Aplicativo:
