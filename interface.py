@@ -285,8 +285,10 @@ class Aplicativo:
         self.quadro1.pack()
 
         self.despedida = Label(self.quadro1)
+        self.despedida['bg'] = '#99ccff'
+        self.despedida['pady'] = 270
         self.despedida['text'] = 'Obrigado por realizar o teste!\nSeus resultados estão em uma pasta\nlocalizada junto com seu aplicativo.'
-        self.despedida['font'] = ('Verdana','20','bold')
+        self.despedida['font'] = ('Century Gothic','20','bold')
         self.despedida.pack()
 
 #---------------------------------------------------------------------------------------------
@@ -389,6 +391,7 @@ root = Tk()
 Aplicativo(root)
 root.title('Teste MBTI')
 root.geometry('600x600')
+root.maxsize(600,600)
 root.configure(bg='#99ccff')
 root.mainloop()
 
