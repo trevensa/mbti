@@ -42,6 +42,66 @@ def corrigeResposta(resposta):
 #---------------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------------
+
+def escreveIntroducao(way,nome_pasta):
+
+    tipos = {
+
+        'ISFJ':{'Dominante':'Si', 'Auxiliar':'Fe', 'Terciaria':'Ti', 'Inferior':'Ne'},
+        'ISTJ':{'Dominante':'Si', 'Auxiliar':'Te', 'Terciaria':'Fi', 'Inferior':'Ne'},
+        'INFJ':{'Dominante':'Ni', 'Auxiliar':'Fe', 'Terciaria':'Ti', 'Inferior':'Se'},
+        'INTJ':{'Dominante':'Ni', 'Auxiliar':'Te', 'Terciaria':'Fi', 'Inferior':'Se'},
+        'ESFJ':{'Dominante':'Fe', 'Auxiliar':'Si', 'Terciaria':'Ne', 'Inferior':'Ti'},
+        'ESTJ':{'Dominante':'Te', 'Auxiliar':'Si', 'Terciaria':'Ne', 'Inferior':'Fi'},
+        'ENFJ':{'Dominante':'Fe', 'Auxiliar':'Ni', 'Terciaria':'Se', 'Inferior':'Ti'},
+        'ENTJ':{'Dominante':'Te', 'Auxiliar':'Ni', 'Terciaria':'Se', 'Inferior':'Fi'},
+        'ISFP':{'Dominante':'Fi', 'Auxiliar':'Se', 'Terciaria':'Ni', 'Inferior':'Te'},
+        'ISTP':{'Dominante':'Ti', 'Auxiliar':'Se', 'Terciaria':'Ni', 'Inferior':'Fe'},
+        'INFP':{'Dominante':'Fi', 'Auxiliar':'Ne', 'Terciaria':'Si', 'Inferior':'Te'},
+        'INTP':{'Dominante':'Ti', 'Auxiliar':'Ne', 'Terciaria':'Si', 'Inferior':'Fe'},
+        'ESFP':{'Dominante':'Se', 'Auxiliar':'Fi', 'Terciaria':'Te', 'Inferior':'Ni'},
+        'ESTP':{'Dominante':'Se', 'Auxiliar':'Ti', 'Terciaria':'Fe', 'Inferior':'Ni'},
+        'ENFP':{'Dominante':'Ne', 'Auxiliar':'Fi', 'Terciaria':'Te', 'Inferior':'Si'},
+        'ENTP':{'Dominante':'Ne', 'Auxiliar':'Ti', 'Terciaria':'Fe', 'Inferior':'Si'}
+
+    }
+
+    readme = open(f'{way}\{nome_pasta}\INTRODUCAO.txt','w')
+
+    readme.write('Olá! Este arquivo contém uma base acerca do conteúdo de MBTI\n\n')
+    readme.write('Esta teoria conta com 16 tipos de personalidade, onde cada uma delas possui 4 funções cognitivas:\n\n')
+    readme.write('  - Função Dominante: esta função é a mais presente em sua personalidade e portanto a mais utilizada por você \n')
+    readme.write('  - Função Auxiliar: esta função, como o próprio nome diz, tem como objetivo "auxiliar" a dominante, equilibrando as decisões tomadas por ela \n')
+    readme.write('  - Função Terciaria: esta função possui um grau de desenvolvimento mais baixo e portanto pode apresentar um comportamento mais imaturo\n')
+    readme.write('  - Função Inferior: por fim, esta função é a menos desenvolvida dentre as 4 e é uma função que você encontra dificuldade de colocar em ação\n\n')
+    readme.write('Existem 8 possibilidades de função cognitiva, sendo elas: \n\n')
+    readme.write('Si: Sensação Introvertida\n')
+    readme.write('Se: Sensação Extrovertida\n')
+    readme.write('Ni: Intuição Introvertida\n')
+    readme.write('Ne: Intuição Extrovertida\n')
+    readme.write('Fi: Sentimento Introvertido\n')
+    readme.write('Fe: Sentimento Extrovertido\n')
+    readme.write('Ti: Pensamento Introvertido\n')
+    readme.write('Te: Pensamento Extrovertido\n\n')
+    readme.write('Cada personalidade possui uma combinação diferente de 4 dessas funções. Veja:\n\n')
+
+    for t in tipos:
+
+        dom = tipos[t]['Dominante']
+        aux = tipos[t]['Auxiliar']
+        ter = tipos[t]['Terciaria']
+        inf = tipos[t]['Inferior']
+
+        readme.write(f' - {t}: {dom} {aux} {ter} {inf}\n')
+
+    readme.write('\nOBS.: A ordem das funções da esquerda pra direita é: \n')
+    readme.write('  Dominante | Auxiliar | Terciária | Inferior')
+
+    readme.close()
+
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
 #Função responsável por criar uma pasta no mesmo lugar em que se localiza o aplicativo
 #Além disso, abre um arquivo de texto dentro desta pasta onde serão armazenados os resultados do usuário
 
@@ -53,7 +113,7 @@ def criaPasta(nome_arquivo):
     try:
 
         os.mkdir(f'{caminho_pasta}\{nome_pasta}')
-        introducao(caminho_pasta,nome_pasta,tipos)
+        escreveIntroducao(caminho_pasta,nome_pasta)
 
     except FileExistsError:
 
