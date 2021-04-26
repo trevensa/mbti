@@ -66,7 +66,7 @@ Você acredita que deve-se possuir um código de conduta a ser seguido com base 
 Você possui capacidade e interesse em explorar dados já existentes, reposicionando-os e explorando novas combinações dessas informações: $Te$Ti
 Você gosta de absorver o máximo possível de informações externas do ambiente em que você está: $Ne$Si
 Você apresenta uma inteligência espacial considerável: $Se$Ni
-Você possui dificuldade de lidar objetivamente com os acontecimentos ao seu redor, buscando extrair algum significado de tudo ao sue redor: $Ni$Se
+Você possui dificuldade de lidar objetivamente com os acontecimentos ao seu redor, buscando extrair algum significado de tudo ao seu redor: $Ni$Se
 Você tem dificuldade em compreender e lidar com os sentimentos dos outros: $Ti$Fe
 Se você já possui uma forma de realizar uma atividade, foge do seu interesse explorar novos caminhos para a realização da mesma: $Si$Ne
 Você possui dificuldade, enquanto conversa com alguém, de saber o que a pessoa está pensando das coisas que você está dizendo: $Fi$Te
