@@ -10,15 +10,11 @@ from datetime import date, datetime
 
 def pegaPerguntas():
 
-    try:
-        f = open('C:/Users/Mateus/Desktop/perguntas.txt','r',encoding='UTF-8')
-        perguntas = []
+    resposta_git = requests.get('https://api.github.com/repos/trevensa/mbti/contents/INFOS.txt')
+    traducao_py = json.loads(resposta_git.text)
+    perguntas = base64.b64decode(traducao_py['content']).decode('UTF-8')
 
-        for linha in f:
-            perguntas.append(linha.replace('\n',''))
-
-    finally:
-        f.close()
+    perguntas = perguntas.split('\n')
 
     return perguntas
 
@@ -591,7 +587,7 @@ class Aplicativo:
         self.barrinha = Label(self.bloco4, text=''.join(self.barra))
         self.barrinha['fg'] = '#00264d'
         self.barrinha['bg'] = '#99ccff'
-        self.barrinha['font'] = ('Courier New', '10')
+        self.barrinha['font'] = ('Courier New', '8')
         self.barrinha.pack(pady=(10,70))
 
         self.progresso = Label(self.bloco4, text= str(self.pos) + '/' + str(len(self.mensagens)))
@@ -718,7 +714,7 @@ class Aplicativo:
             self.respostas[self.k] = resposta
             self.status['text'] = 'Sua resposta: ' + self.respostas[self.k]
 
-            self.barra[self.k] = '☑'
+            self.barra[self.k] = self.barra[self.k].replace('☐','☑')
 
             self.barrinha['text'] = ''.join(self.barra)
 
@@ -776,8 +772,8 @@ class Aplicativo:
 root = Tk()
 Aplicativo(root)
 root.title('Teste MBTI')
-root.geometry('600x600')
-root.maxsize(600,600)
+root.geometry('1000x600')
+root.maxsize(1000,600)
 root.configure(bg='#99ccff')
 root.mainloop()
 
