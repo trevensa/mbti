@@ -55,8 +55,6 @@ class Aplicativo:
     def __init__(self,master=None):
 
         self.bloco1 = Frame(master)
-        self.bloco1['width'] = 600
-        self.bloco1['height'] = 300
         self.bloco1['bg'] = '#99ccff'
         self.bloco1.pack()
 
@@ -80,8 +78,6 @@ class Aplicativo:
         self.iniciar_teste.pack(side=BOTTOM)
 
         self.bloco2 = Frame(master)
-        self.bloco2['width'] = 600
-        self.bloco2['height'] = 300
         self.bloco2['bg'] = '#99ccff'
         self.bloco2.pack()
 
@@ -99,8 +95,6 @@ class Aplicativo:
         self.bloco2.destroy()
 
         self.bloco1 = Frame(master)
-        self.bloco1['width'] = 600
-        self.bloco1['height'] = 300
         self.bloco1['bg'] = '#99ccff'
         self.bloco1.pack()
 
@@ -122,8 +116,6 @@ class Aplicativo:
         self.instrucoes2.pack(side=BOTTOM)
 
         self.bloco2 = Frame(master)
-        self.bloco2['height'] = 600
-        self.bloco2['width'] = 300
         self.bloco2['bg'] = '#99ccff'
         self.bloco2.pack()
 
@@ -286,7 +278,7 @@ class Aplicativo:
 
         self.despedida = Label(self.quadro1)
         self.despedida['bg'] = '#99ccff'
-        self.despedida['pady'] = 270
+        self.despedida['pady'] = 250
         self.despedida['text'] = 'Obrigado por realizar o teste!\nSeus resultados estão em uma pasta\nlocalizada junto com seu aplicativo.'
         self.despedida['font'] = ('Century Gothic','20','bold')
         self.despedida.pack()
