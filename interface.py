@@ -315,42 +315,42 @@ def analisaPontos(funcoes,f):
 
                     break
 
-        if len(dominantes) > 1 or len(auxiliares) > 1:
+            if len(dominantes) > 1 or len(auxiliares) > 1:
 
-            pos_tipos.append(tipo)
+                pos_tipos.append(tipo)
 
-            if ja_escreveu:
+                if ja_escreveu:
 
-                f.write('Houve um empate na pontuação de algumas funções e, portanto, existem as seguintes possibilidades:\n\n')
-                ja_escreveu = False
+                    f.write('Houve um empate na pontuação de algumas funções e, portanto, existem as seguintes possibilidades:\n\n')
+                    ja_escreveu = False
 
-            if primeira_poss:
+                if primeira_poss:
 
+                    f.write('-------------------------------------------------------------------------------\n')
+                    texto = 'uma'
+                    primeira_poss = False
+
+                else:
+
+                    texto = 'outra'
+
+                f.write(f'Esta é {texto} possibilidade:\n\n')
+                f.write(f'Função Dominante: {dominante}\n')
+                f.write(f'Função Auxiliar: {auxiliar}\n')
+                f.write(f'Função Terciária: {terciaria}\n')
+                f.write(f'Função Inferior: {inferior}\n')
+                f.write('\n')
+                f.write(f'Logo, {texto} possibilidade de tipo é {tipo}\n')
                 f.write('-------------------------------------------------------------------------------\n')
-                texto = 'uma'
-                primeira_poss = False
 
             else:
 
-                texto = 'outra'
-
-            f.write(f'Esta é {texto} possibilidade:\n\n')
-            f.write(f'Função Dominante: {dominante}\n')
-            f.write(f'Função Auxiliar: {auxiliar}\n')
-            f.write(f'Função Terciária: {terciaria}\n')
-            f.write(f'Função Inferior: {inferior}\n')
-            f.write('\n')
-            f.write(f'Logo, {texto} possibilidade de tipo é {tipo}\n')
-            f.write('-------------------------------------------------------------------------------\n')
-
-        else:
-
-            f.write(f'Função Dominante: {dominante}\n')
-            f.write(f'Função Auxiliar: {auxiliar}\n')
-            f.write(f'Função Terciária: {terciaria}\n')
-            f.write(f'Função Inferior: {inferior}\n')
-            f.write('\n')
-            f.write(f'Logo, o seu tipo mais provável é {tipo}')
+                f.write(f'Função Dominante: {dominante}\n')
+                f.write(f'Função Auxiliar: {auxiliar}\n')
+                f.write(f'Função Terciária: {terciaria}\n')
+                f.write(f'Função Inferior: {inferior}\n')
+                f.write('\n')
+                f.write(f'Logo, o seu tipo mais provável é {tipo}')
 
     if len(pos_tipos) > 1:
 
