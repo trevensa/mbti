@@ -547,7 +547,6 @@ class Aplicativo:
         self.instrucoes2.destroy()
         self.comecar.destroy()
 
-        self.pos = 1
         self.k = 0
         self.perguntas = pegaPerguntas()
         self.mensagens = self.perguntas[:]
@@ -657,7 +656,7 @@ class Aplicativo:
         self.barrinha['font'] = ('Courier New', '8')
         self.barrinha.pack(pady=(10,70))
 
-        self.progresso = Label(self.bloco4, text= str(self.pos) + '/' + str(len(self.mensagens)))
+        self.progresso = Label(self.bloco4, text= str(self.k+1) + '/' + str(len(self.mensagens)))
         self.progresso['font'] = ('Courier New','10','italic')
         self.progresso['bg'] = '#99ccff'
         self.progresso.pack()
@@ -725,7 +724,7 @@ class Aplicativo:
     def atualizaInfos(self):
 
         self.pergunta['text'] = self.mensagens[self.k]
-        self.progresso['text'] = str(self.pos) + '/' + str(len(self.mensagens))
+        self.progresso['text'] = str(self.k+1) + '/' + str(len(self.mensagens))
         self.status['text'] = 'Sua resposta: ' + self.respostas[self.k]
         self.aviso['text'] = ''
         
@@ -744,7 +743,6 @@ class Aplicativo:
 
         if self.k < len(self.mensagens)-1:
             self.k += 1
-            self.pos += 1
 
         self.atualizaInfos()
 
@@ -758,7 +756,6 @@ class Aplicativo:
 
         if self.k > 0:
             self.k -= 1
-            self.pos -= 1
 
         self.atualizaInfos()
 
