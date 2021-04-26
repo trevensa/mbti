@@ -186,6 +186,7 @@ def escolheDominante(funcoes):
             dominantes.append(item)
         
     return dominantes
+
 #---------------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------------
@@ -368,7 +369,17 @@ def analisaPontos(funcoes,f):
 
                 f.write(f'{unidade}, ')
 
-    f.close()
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
+#Função que executa toda a análise dos resultados e os escreve no arquivo de texto
+
+def analisaResultados(nome_arquivo,perguntas,respostas,f):
+
+    escreveCabecalho(nome_arquivo,f)
+    funcoes = contabilizaPontos(perguntas,respostas,f)
+    escrevePontos(funcoes,f)
+    analisaPontos(funcoes,f)
 
 #---------------------------------------------------------------------------------------------
 
@@ -729,9 +740,9 @@ class Aplicativo:
 
     def enviaNome(self):
 
-        nome = self.nome.get()
+        nome_arquivo = self.nome.get()
 
-        f = criaPasta(nome)
+        f = criaPasta(nome_arquivo)
 
         if f == 'EXISTE':
 
@@ -745,7 +756,8 @@ class Aplicativo:
 
             self.nome.delete(first='0',last='end')
 
-            f.write('ESCREVEU')
+            analisaResultados(nome_arquivo,self.mensagens,self.respostas,f)
+
             f.close()
 
 #---------------------------------------------------------------------------------------------
