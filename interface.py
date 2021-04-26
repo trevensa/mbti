@@ -1,4 +1,6 @@
 from tkinter import *
+import os, getpass, time, json, requests, base64
+from datetime import date, datetime
 
 #https://www.w3schools.com/colors/colors_picker.asp
 #https://www.invertexto.com/simbolos-para-copiar
