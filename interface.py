@@ -564,6 +564,9 @@ class Aplicativo:
             self.respostas.append('-')
             self.barra.append('☐')
 
+        self.pos_barra = self.barra[:]
+        self.pos_barra[self.k] = '•'
+
         self.bloco1 = Frame(master)
         self.bloco1['bg'] = '#99ccff'
         self.bloco1.pack()
@@ -648,7 +651,7 @@ class Aplicativo:
         self.termina['command'] = self.finalizaTeste
         self.termina.pack(pady=(100,10))
 
-        self.barrinha = Label(self.bloco4, text=''.join(self.barra))
+        self.barrinha = Label(self.bloco4, text=''.join(self.pos_barra))
         self.barrinha['fg'] = '#00264d'
         self.barrinha['bg'] = '#99ccff'
         self.barrinha['font'] = ('Courier New', '8')
@@ -725,6 +728,11 @@ class Aplicativo:
         self.progresso['text'] = str(self.pos) + '/' + str(len(self.mensagens))
         self.status['text'] = 'Sua resposta: ' + self.respostas[self.k]
         self.aviso['text'] = ''
+        
+        self.pos_barra = self.barra[:]
+        self.pos_barra[self.k] = '•'
+
+        self.barrinha['text'] = ''.join(self.pos_barra)
 
 #---------------------------------------------------------------------------------------------
 
@@ -776,11 +784,7 @@ class Aplicativo:
         else:
 
             self.respostas[self.k] = resposta
-            self.status['text'] = 'Sua resposta: ' + self.respostas[self.k]
-
             self.barra[self.k] = self.barra[self.k].replace('☐','☑')
-
-            self.barrinha['text'] = ''.join(self.barra)
 
             self.proximaMensagem()
 
