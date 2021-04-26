@@ -894,10 +894,9 @@ class Aplicativo:
         else:
 
             self.k = numero_pagina-1
+            self.atualizaInfos()
 
         self.n_pagina.delete(first='0',last='end')
-
-        self.atualizaInfos()
 
 #---------------------------------------------------------------------------------------------
 
