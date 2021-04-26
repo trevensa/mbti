@@ -42,6 +42,7 @@ def corrigeResposta(resposta):
 #---------------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------------
+#Função que cria um arquivo introdutório sobre o conteúdo de MBTI
 
 def escreveIntroducao(way,nome_pasta):
 
