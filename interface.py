@@ -1,5 +1,8 @@
 from tkinter import *
 
+#https://www.w3schools.com/colors/colors_picker.asp
+#https://www.invertexto.com/simbolos-para-copiar
+
 #---------------------------------------------------------------------------------------------
 #Função que obtém as perguntas para o teste de um arquivo txt ja existente
 
@@ -52,25 +55,34 @@ class Aplicativo:
     def __init__(self,master=None):
 
         self.bloco1 = Frame(master)
-        self.bloco1['width'] = 700
-        self.bloco1['height'] = 350
+        self.bloco1['width'] = 600
+        self.bloco1['height'] = 300
+        self.bloco1['bg'] = '#99ccff'
         self.bloco1.pack()
 
         self.bemvindo = Label(self.bloco1)
         self.bemvindo['text'] = 'Bem-Vindo ao teste de MBTI!'
-        self.bemvindo['font'] = ('Berlin Sans','20','bold')
+        self.bemvindo['font'] = ('Rockwell','20','bold')
+        self.bemvindo['bg'] = '#99ccff'
         self.bemvindo['pady'] = 200
+        self.bemvindo['padx'] = 200
         self.bemvindo.pack()
 
         self.iniciar_teste = Button(self.bloco1)
         self.iniciar_teste['width'] = 20
         self.iniciar_teste['text'] = 'Iniciar o teste'
+        self.iniciar_teste['font'] = ('Calibri','12','bold')
+        self.iniciar_teste['bd'] = 3
+        self.iniciar_teste['relief'] = 'raised'
+        self.iniciar_teste['cursor'] = 'hand2'
+        self.iniciar_teste['bg'] = '#cce6ff'
         self.iniciar_teste['command'] = self.segundaPagina
         self.iniciar_teste.pack(side=BOTTOM)
 
         self.bloco2 = Frame(master)
-        self.bloco2['width'] = 700
-        self.bloco2['height'] = 350
+        self.bloco2['width'] = 600
+        self.bloco2['height'] = 300
+        self.bloco2['bg'] = '#99ccff'
         self.bloco2.pack()
 
 #---------------------------------------------------------------------------------------------
@@ -83,23 +95,46 @@ class Aplicativo:
 
         self.bemvindo.destroy()
         self.iniciar_teste.destroy()
+        self.bloco1.destroy()
+        self.bloco2.destroy()
+
+        self.bloco1 = Frame(master)
+        self.bloco1['width'] = 600
+        self.bloco1['height'] = 300
+        self.bloco1['bg'] = '#99ccff'
+        self.bloco1.pack()
 
         self.instrucoes = Label(self.bloco1)
         self.instrucoes['font'] = ('Berlin Sans','15','bold')
         self.instrucoes['pady'] = 25
+        self.instrucoes['padx'] = 300
         self.instrucoes['text'] = 'Instruções'
+        self.instrucoes['bg'] = '#99ccff'
         self.instrucoes.pack()
 
         self.instrucoes2 = Label(self.bloco1)
         self.instrucoes2['font'] = ('Calibri','12')
+        self.instrucoes2['bg'] = '#99ccff'
         self.instrucoes2['pady'] = 10
+        self.instrucoes2['padx'] = 30
         self.instrucoes2['justify'] = 'left'
-        self.instrucoes2['text'] = 'O teste é composto de 72 questões, as quais você deve responder um número de\n -2 a 2 com base na frequência em que você realiza o que está escrito.\n\nLegenda:\n\n-2 = Raramente\n-1 = Ocasionalmente\n0 = Neutro\n1 = Comumente\n2 = Muito frequentemente\n\nTente ser honesto com as respostas mesmo que elas te desagradem\nou te envergonhem de alguma forma. Vale ressaltar que, nesses casos, geralmente\na resposta verdadeira é aquela que você sente desconforto em pensar.\n\nBom teste!\n\n\n'
+        self.instrucoes2['text'] = 'O teste é composto de 72 questões, as quais você deve responder um número de\n-2 a 2 com base na frequência em que você realiza o que está escrito.\n\nLegenda:\n\n-2 = Raramente\n-1 = Ocasionalmente\n0 = Neutro\n1 = Comumente\n2 = Muito frequentemente\n\nTente ser honesto com as respostas mesmo que elas te desagradem\nou te envergonhem de alguma forma. Vale ressaltar que, nesses casos, geralmente\na resposta verdadeira é aquela que você sente desconforto em pensar.\n\nBom teste!\n\n\n'
         self.instrucoes2.pack(side=BOTTOM)
 
+        self.bloco2 = Frame(master)
+        self.bloco2['height'] = 600
+        self.bloco2['width'] = 300
+        self.bloco2['bg'] = '#99ccff'
+        self.bloco2.pack()
+
         self.comecar = Button(self.bloco2)
-        self.comecar['text'] = 'Começar o questionário'
         self.comecar['width'] = 25
+        self.comecar['text'] = 'Começar o Questionário'
+        self.comecar['font'] = ('Calibri','12','bold')
+        self.comecar['bd'] = 3
+        self.comecar['relief'] = 'raised'
+        self.comecar['cursor'] = 'hand2'
+        self.comecar['bg'] = '#cce6ff'
         self.comecar['command'] = self.terceiraPagina
         self.comecar.pack()
 
@@ -114,6 +149,7 @@ class Aplicativo:
         self.bloco1.destroy()
         self.bloco2.destroy()
         self.instrucoes.destroy()
+        self.instrucoes2.destroy()
         self.comecar.destroy()
 
         self.pos = 1
@@ -125,28 +161,26 @@ class Aplicativo:
         for item in self.mensagens:
 
             self.respostas.append('-')
-            self.barra.append('_')
+            self.barra.append('☐')
 
         self.quadrante1 = Frame(master)
-        self.quadrante1['padx'] = 50
-        self.quadrante1['pady'] = 25
-        #self.quadrante1['bg'] = '#993399'
+        self.quadrante1['bg'] = '#99ccff'
         self.quadrante1.pack()
 
         self.pergunta = Label(self.quadrante1, text=self.mensagens[self.k])
-        self.pergunta['width'] = 50
-        self.pergunta['font'] = ('Calibri','16')
+        self.pergunta['pady'] = 25
+        self.pergunta['font'] = ('Century Gothic','16','bold')
+        self.pergunta['bg'] = '#99ccff'
         self.pergunta.pack()
 
         self.status = Label(self.quadrante1, text='Sua resposta: ' + self.respostas[self.k])
-        self.status['font'] = ('Calibri','10','bold')
-        self.status['pady'] = 20
+        self.status['font'] = ('Courier New','11','bold')
+        self.status['bg'] = '#99ccff'
+        self.status['pady'] = 15
         self.status.pack(side=BOTTOM)
 
         self.quadrante2 = Frame(master)
-        self.quadrante2['padx'] = 50
-        self.quadrante2['pady'] = 25
-        #self.quadrante2['bg'] = '#ffff99'
+        self.quadrante2['bg'] = '#99ccff'
         self.quadrante2.pack()
 
         self.resposta = Entry(self.quadrante2)
@@ -155,59 +189,73 @@ class Aplicativo:
         self.resposta.pack()
 
         self.aviso = Label(self.quadrante2)
-        self.aviso['font'] = ('Calibri','10','bold')
+        self.aviso['font'] = ('Courier New','11','bold')
+        self.aviso['pady'] = 15
         self.aviso['fg'] = '#ff0000'
-        self.aviso['height'] = 5
+        self.aviso['bg'] = '#99ccff'
         self.aviso.pack(side=BOTTOM)
 
         self.quadrante3 = Frame(master)
-        self.quadrante3['padx'] = 50
-        self.quadrante3['pady'] = 25
-        #self.quadrante3['bg'] = '#66ffff'
+        self.quadrante3['bg'] = '#99ccff'
         self.quadrante3.pack()
 
         self.confirma = Button(self.quadrante3)
-        self.confirma['text'] = 'Confirmar'
         self.confirma['width'] = 10
+        self.confirma['text'] = 'Confirmar'
+        self.confirma['font'] = ('Calibri','12','bold')
+        self.confirma['bd'] = 3
+        self.confirma['relief'] = 'raised'
+        self.confirma['cursor'] = 'hand2'
+        self.confirma['bg'] = '#cce6ff'
         self.confirma['command'] = self.enviaResposta
-        self.confirma.pack()
+        self.confirma.pack(pady=(10,30))
 
         self.proximo = Button(self.quadrante3)
-        self.proximo['text'] = 'Próxima >>'
         self.proximo['width'] = 10
+        self.proximo['text'] = 'Próxima >>'
+        self.proximo['font'] = ('Calibri','12','bold')
+        self.proximo['bd'] = 3
+        self.proximo['relief'] = 'raised'
+        self.proximo['cursor'] = 'hand2'
+        self.proximo['bg'] = '#cce6ff'
         self.proximo['command'] = self.proximaMensagem
-        self.proximo.pack(side=RIGHT)
+        self.proximo.pack(side=RIGHT,padx=(0,15))
 
         self.anterior = Button(self.quadrante3)
-        self.anterior['text'] = '<< Anterior'
         self.anterior['width'] = 10
+        self.anterior['text'] = '<< Anterior'
+        self.anterior['font'] = ('Calibri','12','bold')
+        self.anterior['bd'] = 3
+        self.anterior['relief'] = 'raised'
+        self.anterior['cursor'] = 'hand2'
+        self.anterior['bg'] = '#cce6ff'
         self.anterior['command'] = self.anteriorMensagem
-        self.anterior.pack(side=LEFT)
-
-        self.espaco = Label(self.quadrante3, text=10*' ')
-        self.espaco['height'] = 5
-        self.espaco.pack(side=BOTTOM)
+        self.anterior.pack(side=LEFT,padx=(15,0))
 
         self.quadrante4 = Frame(master)
-        self.quadrante4['padx'] = 50
-        self.quadrante4['pady'] = 25
-        #self.quadrante4['bg'] = '#ff9933'
+        self.quadrante4['bg'] = '#99ccff'
         self.quadrante4.pack()
 
         self.termina = Button(self.quadrante4)
+        self.termina['width'] = 20
         self.termina['text'] = 'Finalizar Teste'
-        self.termina['width'] = 15
+        self.termina['font'] = ('Calibri','12','bold')
+        self.termina['bd'] = 3
+        self.termina['relief'] = 'raised'
+        self.termina['cursor'] = 'hand2'
+        self.termina['bg'] = '#cce6ff'
         self.termina['command'] = self.finalizaTeste
-        self.termina.pack()
+        self.termina.pack(pady=(100,10))
 
         self.barrinha = Label(self.quadrante4, text=''.join(self.barra))
-        self.barrinha['fg'] = '#00cc00'
-        self.barrinha['font'] = ('Arial', '15')
-        self.barrinha.pack()
+        self.barrinha['fg'] = '#00264d'
+        self.barrinha['bg'] = '#99ccff'
+        self.barrinha['font'] = ('Courier New', '10')
+        self.barrinha.pack(pady=(10,70))
 
         self.progresso = Label(self.quadrante4, text= str(self.pos) + '/' + str(len(self.mensagens)))
-        self.progresso['font'] = ('Arial','8','italic')
-        self.progresso['height'] = 5
+        self.progresso['font'] = ('Courier New','10','italic')
+        self.progresso['bg'] = '#99ccff'
         self.progresso.pack()
 
 #---------------------------------------------------------------------------------------------
@@ -228,7 +276,6 @@ class Aplicativo:
         self.confirma.destroy()
         self.proximo.destroy()
         self.anterior.destroy()
-        self.espaco.destroy()
         self.quadrante4.destroy()
         self.termina.destroy()
         self.barrinha.destroy()
@@ -243,6 +290,17 @@ class Aplicativo:
         self.despedida.pack()
 
 #---------------------------------------------------------------------------------------------
+#Método responsável por atualizar as informações da tela:
+#a pergunta, a página, o status de resposta e o aviso
+
+    def atualizaInfos(self):
+
+        self.pergunta['text'] = self.mensagens[self.k]
+        self.progresso['text'] = str(self.pos) + '/' + str(len(self.mensagens))
+        self.status['text'] = 'Sua resposta: ' + self.respostas[self.k]
+        self.aviso['text'] = ''
+
+#---------------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------------
 #Método responsável por somar 1 ao contador 'k'
@@ -254,10 +312,7 @@ class Aplicativo:
             self.k += 1
             self.pos += 1
 
-        self.pergunta['text'] = self.mensagens[self.k]
-        self.progresso['text'] = str(self.pos) + '/' + str(len(self.mensagens))
-        self.status['text'] = 'Sua resposta: ' + self.respostas[self.k]
-        self.aviso['text'] = ''
+        self.atualizaInfos()
 
 #---------------------------------------------------------------------------------------------
 
@@ -271,10 +326,7 @@ class Aplicativo:
             self.k -= 1
             self.pos -= 1
 
-        self.pergunta['text'] = self.mensagens[self.k]
-        self.progresso['text'] = str(self.pos) + '/' + str(len(self.mensagens))
-        self.status['text'] = 'Sua resposta: ' + self.respostas[self.k]
-        self.aviso['text'] = ''
+        self.atualizaInfos()
 
 #---------------------------------------------------------------------------------------------
 
@@ -300,7 +352,7 @@ class Aplicativo:
             self.respostas[self.k] = resposta
             self.status['text'] = 'Sua resposta: ' + self.respostas[self.k]
 
-            self.barra[self.k] = '-'
+            self.barra[self.k] = '☑'
 
             self.barrinha['text'] = ''.join(self.barra)
 
@@ -337,6 +389,7 @@ root = Tk()
 Aplicativo(root)
 root.title('Teste MBTI')
 root.geometry('600x600')
+root.configure(bg='#99ccff')
 root.mainloop()
 
 #---------------------------------------------------------------------------------------------
