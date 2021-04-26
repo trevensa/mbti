@@ -49,7 +49,7 @@ Você não consegue manter foco e uma atividade constante por muito tempo sem se
 Você gosta de dar ordens e delegar atividades aos demais: $Te$Fi
 Você sente que o mundo exige demais de você e que você não consegue suprir as demandas do mesmo: $Fi$Te
 Você é inflexível ou receoso quando se trata de experimentar novas experiências: $Si$Ne
-Embora você consiga montar uma linha de raciocínio muito bem estruturada na sua cabeça, esta é tão abstrata que você não encontra palavras para descrevê-la para alguém: $Ni$Se
+Você monta uma linha de raciocínio muito bem estruturada na sua cabeça, mas ela é tão abstrata que você não encontra palavras para descrevê-la: $Ni$Se
 Você gosta de viver o presente e sente dificuldade de traçar planos futuros: $Se$Ni
 Você tem dificuldades em compreender e seguir as normais sociais: $Ti$Fe
 Ao se deparar com um problema, você visualiza diversas formas de solucioná-lo: $Ne$Si
@@ -63,7 +63,7 @@ Você apresenta certo desprezo por rotina e atividades fixadas: $Ne$Si
 Ter seus princípios violados é a maior motivação para você agir de alguma forma (reativa): $Fi$Te
 Você trabalha em picos de energia (com grande motivação no começo de algo novo mas com a perda gradual desse entusiasmo): $Ne$Si
 Você acredita que deve-se possuir um código de conduta a ser seguido com base em fatores e dados objetivos: $Te$Fi
-Você possui capacidade e interesse em explorar dados já existentes, reposicionando-os e explorando novas combinações de informações já existentes: $Te$Ti
+Você possui capacidade e interesse em explorar dados já existentes, reposicionando-os e explorando novas combinações dessas informações: $Te$Ti
 Você gosta de absorver o máximo possível de informações externas do ambiente em que você está: $Ne$Si
 Você apresenta uma inteligência espacial considerável: $Se$Ni
 Você possui dificuldade de lidar objetivamente com os acontecimentos ao seu redor, buscando extrair algum significado de tudo ao sue redor: $Ni$Se
