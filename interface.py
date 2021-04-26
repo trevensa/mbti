@@ -6,6 +6,27 @@ from datetime import date, datetime
 #https://www.invertexto.com/simbolos-para-copiar
 
 #---------------------------------------------------------------------------------------------
+#Função que confere se o número da página digitado é uma página de verdade
+
+def conferePagina(pagina):
+
+    try:
+
+        numero_pagina = int(pagina)
+
+        if numero_pagina < 1 or numero_pagina > 72:
+
+            raise ValueError
+
+        return numero_pagina
+
+    except ValueError:
+
+        return 'INVALIDO'
+
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
 #Função que obtém as perguntas para o teste de um arquivo txt ja existente
 
 def pegaPerguntas():
@@ -658,6 +679,7 @@ class Aplicativo:
         self.ir['relief'] = 'raised'
         self.ir['cursor'] = 'hand2'
         self.ir['bg'] = '#cce6ff'
+        self.ir['command'] = self.pulaPagina
         self.ir.pack(padx=(20,20),pady=(5,5))
 
         self.termina = Button(self.bloco4)
@@ -855,6 +877,30 @@ class Aplicativo:
             self.nome.delete(first='0',last='end')
 
 #---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
+#Método que pula para a página digitada, caso esta exista
+
+    def pulaPagina(self):
+
+        pagina = self.n_pagina.get()
+
+        numero_pagina = conferePagina(pagina)
+
+        if numero_pagina == 'INVALIDO':
+
+            self.aviso['text'] = 'Essa página não existe. Tente outra.'
+
+        else:
+
+            self.k = numero_pagina-1
+
+        self.n_pagina.delete(first='0',last='end')
+
+        self.atualizaInfos()
+
+#---------------------------------------------------------------------------------------------
+
 #Inicialização do Aplicativo com o módulo Tkinter
 #Definição do nome do teste e do tamanho da janela
 
