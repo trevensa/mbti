@@ -169,6 +169,9 @@ def escrevePontos(funcoes,f):
 #---------------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------------
+#Função que seleciona as funções cognitivas com maiores pontuações
+#Retorna uma lista
+
 def escolheDominante(funcoes):
 
     dominantes = []
@@ -186,6 +189,9 @@ def escolheDominante(funcoes):
 #---------------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------------
+#Função que seleciona a função cognitva auxiliar com mais pontos para a função dominante fornecida
+#Retorna uma lista
+
 def escolheAuxiliar(funcoes,dominante):
 
     if dominante == 'Ne' or dominante == 'Se':
@@ -247,6 +253,12 @@ def escolheAuxiliar(funcoes,dominante):
 #---------------------------------------------------------------------------------------------
             
 #---------------------------------------------------------------------------------------------
+#Obtém-se a(s) dominante(s) do teste do usuário
+#Para cada dominante possível, analisa-se a(s) auxiliar(es) com maior pontuação
+#Para cada combinação de dominante e auxiliar possível, escreve-se no arquivo de texto
+#Por fim, escreve no arquivo de texto qual(is) a(s) possibilidade(s) de tipo mais provável(is)
+#Fecha o arquivo de texto
+
 def analisaPontos(funcoes,f):
 
     primeira_poss = True
