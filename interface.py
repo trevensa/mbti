@@ -156,6 +156,211 @@ def contabilizaPontos(perguntas,respostas,arq):
 #---------------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------------
+#Função que escreve as pontuações finais no arquivo de texto
+
+def escrevePontos(funcoes,f):
+
+    for item in funcoes:
+
+        f.write(f'{item}: {funcoes[item]}\n')
+
+    f.write('\nCom base nos seus resultados, obtiveram-se algumas conclusões.\n\n')
+
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
+def escolheDominante(funcoes):
+
+    dominantes = []
+
+    pos = max(funcoes, key = lambda k: funcoes[k])
+    maior_valor = funcoes[pos]
+
+    for item in funcoes:
+
+        if funcoes[item] == maior_valor:
+
+            dominantes.append(item)
+        
+    return dominantes
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
+def escolheAuxiliar(funcoes,dominante):
+
+    if dominante == 'Ne' or dominante == 'Se':
+
+        if funcoes['Ti'] > funcoes['Fi']:
+
+            return ['Ti']
+        
+        elif funcoes['Fi'] > funcoes['Ti']:
+
+            return ['Fi']
+
+        else:
+
+            return ['Ti','Fi']
+
+    elif dominante == 'Te' or dominante == 'Fe':
+
+        if funcoes['Si'] > funcoes['Ni']:
+
+            return ['Si']
+        
+        elif funcoes['Ni'] > funcoes['Si']:
+
+            return ['Ni']
+        
+        else:
+
+            return ['Si','Ni']
+
+    elif dominante == 'Ni' or dominante == 'Si':
+
+        if funcoes['Te'] > funcoes['Fe']:
+
+            return ['Te']
+        
+        elif funcoes['Fe'] > funcoes['Te']:
+
+            return ['Fe']
+        
+        else:
+
+            return ['Te','Fe']
+
+    elif dominante == 'Ti' or dominante == 'Fi':
+
+        if funcoes['Ne'] > funcoes['Se']:
+
+            return ['Ne']
+        
+        elif funcoes['Se'] > funcoes['Ne']:
+
+            return ['Se']
+
+        else:
+
+            return ['Ne','Se']
+
+#---------------------------------------------------------------------------------------------
+            
+#---------------------------------------------------------------------------------------------
+def analisaPontos(funcoes,f):
+
+    primeira_poss = True
+    ja_escreveu = True
+    dominantes = []
+    auxiliares = []
+    dominante = ''
+    auxiliar = ''
+    terciaria = ''
+    inferior = ''
+    tipo = ''
+    pos_tipos = []
+
+    tipos = {
+
+        'ISFJ':{'Dominante':'Si', 'Auxiliar':'Fe', 'Terciaria':'Ti', 'Inferior':'Ne'},
+        'ISTJ':{'Dominante':'Si', 'Auxiliar':'Te', 'Terciaria':'Fi', 'Inferior':'Ne'},
+        'INFJ':{'Dominante':'Ni', 'Auxiliar':'Fe', 'Terciaria':'Ti', 'Inferior':'Se'},
+        'INTJ':{'Dominante':'Ni', 'Auxiliar':'Te', 'Terciaria':'Fi', 'Inferior':'Se'},
+        'ESFJ':{'Dominante':'Fe', 'Auxiliar':'Si', 'Terciaria':'Ne', 'Inferior':'Ti'},
+        'ESTJ':{'Dominante':'Te', 'Auxiliar':'Si', 'Terciaria':'Ne', 'Inferior':'Fi'},
+        'ENFJ':{'Dominante':'Fe', 'Auxiliar':'Ni', 'Terciaria':'Se', 'Inferior':'Ti'},
+        'ENTJ':{'Dominante':'Te', 'Auxiliar':'Ni', 'Terciaria':'Se', 'Inferior':'Fi'},
+        'ISFP':{'Dominante':'Fi', 'Auxiliar':'Se', 'Terciaria':'Ni', 'Inferior':'Te'},
+        'ISTP':{'Dominante':'Ti', 'Auxiliar':'Se', 'Terciaria':'Ni', 'Inferior':'Fe'},
+        'INFP':{'Dominante':'Fi', 'Auxiliar':'Ne', 'Terciaria':'Si', 'Inferior':'Te'},
+        'INTP':{'Dominante':'Ti', 'Auxiliar':'Ne', 'Terciaria':'Si', 'Inferior':'Fe'},
+        'ESFP':{'Dominante':'Se', 'Auxiliar':'Fi', 'Terciaria':'Te', 'Inferior':'Ni'},
+        'ESTP':{'Dominante':'Se', 'Auxiliar':'Ti', 'Terciaria':'Fe', 'Inferior':'Ni'},
+        'ENFP':{'Dominante':'Ne', 'Auxiliar':'Fi', 'Terciaria':'Te', 'Inferior':'Si'},
+        'ENTP':{'Dominante':'Ne', 'Auxiliar':'Ti', 'Terciaria':'Fe', 'Inferior':'Si'}
+
+    }
+
+    dominantes = escolheDominante(funcoes)
+
+    for dominante in dominantes:
+
+        auxiliares = escolheAuxiliar(funcoes,dominante)
+
+        for auxiliar in auxiliares:
+
+            for j in tipos:
+
+                if tipos[j]['Dominante'] == dominante and tipos[j]['Auxiliar'] == auxiliar:
+
+                    tipo = j
+                    terciaria = tipos[j]['Terciaria']
+                    inferior = tipos[j]['Inferior']
+
+                    break
+
+        if len(dominantes) > 1 or len(auxiliares) > 1:
+
+            pos_tipos.append(tipo)
+
+            if ja_escreveu:
+
+                f.write('Houve um empate na pontuação de algumas funções e, portanto, existem as seguintes possibilidades:\n\n')
+                ja_escreveu = False
+
+            if primeira_poss:
+
+                f.write('-------------------------------------------------------------------------------\n')
+                texto = 'uma'
+                primeira_poss = False
+
+            else:
+
+                texto = 'outra'
+
+            f.write(f'Esta é {texto} possibilidade:\n\n')
+            f.write(f'Função Dominante: {dominante}\n')
+            f.write(f'Função Auxiliar: {auxiliar}\n')
+            f.write(f'Função Terciária: {terciaria}\n')
+            f.write(f'Função Inferior: {inferior}\n')
+            f.write('\n')
+            f.write(f'Logo, {texto} possibilidade de tipo é {tipo}\n')
+            f.write('-------------------------------------------------------------------------------\n')
+
+        else:
+
+            f.write(f'Função Dominante: {dominante}\n')
+            f.write(f'Função Auxiliar: {auxiliar}\n')
+            f.write(f'Função Terciária: {terciaria}\n')
+            f.write(f'Função Inferior: {inferior}\n')
+            f.write('\n')
+            f.write(f'Logo, o seu tipo mais provável é {tipo}')
+
+    if len(pos_tipos) > 1:
+
+        f.write('\nPortanto, conclui-se que suas possibilidades de personalidade são: ')
+
+        for uni in range(len(pos_tipos)):
+
+            unidade = pos_tipos[uni]
+
+            if uni == (len(pos_tipos)-1):
+
+                f.write(f'e {unidade}.')
+            
+            elif uni == (len(pos_tipos)-2):
+
+                f.write(f'{unidade} ')
+
+            else:
+
+                f.write(f'{unidade}, ')
+
+    f.close()
+
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
 #Criação de uma classe 'Aplicativo' que contém a interface do teste
 
 class Aplicativo:
