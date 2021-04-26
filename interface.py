@@ -189,7 +189,7 @@ def traduzPontos(pontos):
 #---------------------------------------------------------------------------------------------
 #Função que contabiliza os pontos do usuário
 
-def contabilizaPontos(perguntas,respostas,arq):
+def contabilizaPontos(perguntas,respostas,f):
 
     funcoes = {'Si': 0, 'Se': 0, 'Ni': 0, 'Ne': 0, 'Ti': 0, 'Te': 0, 'Fi': 0, 'Fe': 0}
 
@@ -203,9 +203,12 @@ def contabilizaPontos(perguntas,respostas,arq):
         escrita = traduzPontos(pontos)
 
         funcoes[adc] += pontos
-        funcoes[rem] -= pontos
 
-        arq.write(f'{pergunta}| {escrita}\n')
+        if abs(pontos) == 2:
+
+            funcoes[rem] -= pontos
+
+        f.write(f'{pergunta}| {escrita}\n')
     
     return funcoes
 
