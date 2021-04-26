@@ -617,6 +617,13 @@ class Aplicativo:
         self.nome['justify'] = ('center')
         self.nome.pack()
 
+        self.aviso = Label(self.bloco1)
+        self.aviso['font'] = ('Courier New','11','bold')
+        self.aviso['pady'] = 15
+        self.aviso['fg'] = '#ff0000'
+        self.aviso['bg'] = '#99ccff'
+        self.aviso.pack()
+
         self.envia_nome = Button(self.bloco1)
         self.termina['width'] = 20
         self.termina['text'] = 'Finalizar Teste'
@@ -625,9 +632,9 @@ class Aplicativo:
         self.termina['relief'] = 'raised'
         self.termina['cursor'] = 'hand2'
         self.termina['bg'] = '#cce6ff'
-        self.envia_nome['command'] = 
+        self.envia_nome['command'] = self.enviaNome
         self.envia_nome.pack(side=BOTTOM,pady=(25,25))
-        
+
 #---------------------------------------------------------------------------------------------
 #Método responsável por atualizar as informações da tela:
 #a pergunta, a página, o status de resposta e o aviso
@@ -719,6 +726,20 @@ class Aplicativo:
             self.aviso['text'] = 'Responda todas as perguntas antes de finalizar o teste'
 
 #---------------------------------------------------------------------------------------------
+
+    def enviaNome(self):
+
+        nome = self.nome.get()
+
+        f = criaPasta(nome)
+
+        if f == 'EXISTE':
+
+            self.aviso['text'] = 'Já existe um arquivo com esse nome. Selecione outro.'
+
+        else:
+
+
 
 #---------------------------------------------------------------------------------------------
 #Inicialização do Aplicativo com o módulo Tkinter
