@@ -608,10 +608,26 @@ class Aplicativo:
         self.despedida = Label(self.bloco1)
         self.despedida['bg'] = '#99ccff'
         self.despedida['pady'] = 250
-        self.despedida['text'] = 'Obrigado por realizar o teste!\nSeus resultados estão em uma pasta\nlocalizada junto com seu aplicativo.'
+        self.despedida['text'] = 'Obrigado por realizar o teste!\nSeus resultados estão em uma pasta\nlocalizada junto com seu aplicativo.\n\nDigite seu nome:'
         self.despedida['font'] = ('Century Gothic','20','bold')
         self.despedida.pack()
 
+        self.nome = Entry(self.bloco1)
+        self.nome['width'] = 15
+        self.nome['justify'] = ('center')
+        self.nome.pack()
+
+        self.envia_nome = Button(self.bloco1)
+        self.termina['width'] = 20
+        self.termina['text'] = 'Finalizar Teste'
+        self.termina['font'] = ('Calibri','12','bold')
+        self.termina['bd'] = 3
+        self.termina['relief'] = 'raised'
+        self.termina['cursor'] = 'hand2'
+        self.termina['bg'] = '#cce6ff'
+        self.envia_nome['command'] = 
+        self.envia_nome.pack(side=BOTTOM,pady=(25,25))
+        
 #---------------------------------------------------------------------------------------------
 #Método responsável por atualizar as informações da tela:
 #a pergunta, a página, o status de resposta e o aviso
