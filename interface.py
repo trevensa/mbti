@@ -900,6 +900,21 @@ class Aplicativo:
 
 #---------------------------------------------------------------------------------------------
 
+#---------------------------------------------------------------------------------------------
+#Método que reinicia o teste
+
+    def reiniciaTeste(self):
+
+        self.bloco1.destroy()
+        self.despedida.destroy()
+        self.nome.destroy()
+        self.aviso.destroy()
+        self.envia_nome.destroy()
+
+        self.__init__()
+
+#---------------------------------------------------------------------------------------------
+
 #Inicialização do Aplicativo com o módulo Tkinter
 #Definição do nome do teste e do tamanho da janela
 
