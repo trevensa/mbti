@@ -76,6 +76,39 @@ def criaPasta(nome_arquivo):
 #---------------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------------
+#Função que recebe uma(s) palavra(s) e coloca a(s) inicial(is) em letra maiúscula
+
+def colocaMaiusculo(nome_arquivo):
+
+    nomes = nome_arquivo.split()
+
+    for qtd in range(len(nomes)):
+
+        nomes[qtd] = nomes[qtd].capitalize()
+
+    return ' '.join(nomes)
+
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
+#Função responsável por escrever as informações iniciais no arquivo de resultados da pessoa
+
+def escreveCabecalho(nome_arquivo,arq):
+
+    horario = datetime.now().strftime('%H:%M')
+    data = date.today().strftime('%d/%m/%Y')
+    pessoa = colocaMaiusculo(nome_arquivo)
+
+    arq.write(f'Olá, {pessoa}!\n')
+    arq.write(f'No dia {data} às {horario} você realizou o teste. Os resultados do mesmo estão neste arquivo.\n\n')
+
+    arq.write('Este é o backup das perguntas e de suas respostas:\n')
+    arq.write('-------------------------------------------------------------------------------')
+    arq.write('\n')
+
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
 #Criação de uma classe 'Aplicativo' que contém a interface do teste
 
 class Aplicativo:
