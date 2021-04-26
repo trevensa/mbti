@@ -93,18 +93,18 @@ def colocaMaiusculo(nome_arquivo):
 #---------------------------------------------------------------------------------------------
 #Função responsável por escrever as informações iniciais no arquivo de resultados da pessoa
 
-def escreveCabecalho(nome_arquivo,arq):
+def escreveCabecalho(nome_arquivo,f):
 
     horario = datetime.now().strftime('%H:%M')
     data = date.today().strftime('%d/%m/%Y')
     pessoa = colocaMaiusculo(nome_arquivo)
 
-    arq.write(f'Olá, {pessoa}!\n')
-    arq.write(f'No dia {data} às {horario} você realizou o teste. Os resultados do mesmo estão neste arquivo.\n\n')
+    f.write(f'Olá, {pessoa}!\n')
+    f.write(f'No dia {data} às {horario} você realizou o teste. Os resultados do mesmo estão neste arquivo.\n\n')
 
-    arq.write('Este é o backup das perguntas e de suas respostas:\n')
-    arq.write('-------------------------------------------------------------------------------')
-    arq.write('\n')
+    f.write('Este é o backup das perguntas e de suas respostas:\n')
+    f.write('-------------------------------------------------------------------------------')
+    f.write('\n')
 
 #---------------------------------------------------------------------------------------------
 
@@ -159,6 +159,9 @@ def contabilizaPontos(perguntas,respostas,arq):
 #Função que escreve as pontuações finais no arquivo de texto
 
 def escrevePontos(funcoes,f):
+
+    f.write('-------------------------------------------------------------------------------\n\n')
+    f.write('Esses foram os seus resultados:\n\n')
 
     for item in funcoes:
 
@@ -751,14 +754,14 @@ class Aplicativo:
 
         else:
 
+            analisaResultados(nome_arquivo,self.mensagens,self.respostas,f)
+
+            f.close()
+
             self.aviso['fg'] = '#009933'
             self.aviso['text'] = 'Arquivo criado!'
 
             self.nome.delete(first='0',last='end')
-
-            analisaResultados(nome_arquivo,self.mensagens,self.respostas,f)
-
-            f.close()
 
 #---------------------------------------------------------------------------------------------
 #Inicialização do Aplicativo com o módulo Tkinter
