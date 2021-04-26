@@ -489,7 +489,13 @@ class Aplicativo:
 
         self.pos = 1
         self.k = 0
-        self.mensagens = pegaPerguntas()
+        self.perguntas = pegaPerguntas()
+        self.mensagens = self.perguntas[:]
+
+        for w in range (len(self.mensagens)):
+        
+            self.mensagens[w] = self.mensagens[w][:-6]
+
         self.respostas = []
         self.barra = []
 
@@ -504,7 +510,7 @@ class Aplicativo:
 
         self.pergunta = Label(self.bloco1, text=self.mensagens[self.k])
         self.pergunta['pady'] = 25
-        self.pergunta['font'] = ('Century Gothic','16','bold')
+        self.pergunta['font'] = ('Century Gothic','10','bold')
         self.pergunta['bg'] = '#99ccff'
         self.pergunta.pack()
 
@@ -754,7 +760,7 @@ class Aplicativo:
 
         else:
 
-            analisaResultados(nome_arquivo,self.mensagens,self.respostas,f)
+            analisaResultados(nome_arquivo,self.perguntas,self.respostas,f)
 
             f.close()
 
