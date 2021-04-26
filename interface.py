@@ -155,43 +155,43 @@ class Aplicativo:
             self.respostas.append('-')
             self.barra.append('☐')
 
-        self.quadrante1 = Frame(master)
-        self.quadrante1['bg'] = '#99ccff'
-        self.quadrante1.pack()
+        self.bloco1 = Frame(master)
+        self.bloco1['bg'] = '#99ccff'
+        self.bloco1.pack()
 
-        self.pergunta = Label(self.quadrante1, text=self.mensagens[self.k])
+        self.pergunta = Label(self.bloco1, text=self.mensagens[self.k])
         self.pergunta['pady'] = 25
         self.pergunta['font'] = ('Century Gothic','16','bold')
         self.pergunta['bg'] = '#99ccff'
         self.pergunta.pack()
 
-        self.status = Label(self.quadrante1, text='Sua resposta: ' + self.respostas[self.k])
+        self.status = Label(self.bloco1, text='Sua resposta: ' + self.respostas[self.k])
         self.status['font'] = ('Courier New','11','bold')
         self.status['bg'] = '#99ccff'
         self.status['pady'] = 15
         self.status.pack(side=BOTTOM)
 
-        self.quadrante2 = Frame(master)
-        self.quadrante2['bg'] = '#99ccff'
-        self.quadrante2.pack()
+        self.bloco2 = Frame(master)
+        self.bloco2['bg'] = '#99ccff'
+        self.bloco2.pack()
 
-        self.resposta = Entry(self.quadrante2)
+        self.resposta = Entry(self.bloco2)
         self.resposta['width'] = 15
         self.resposta['justify'] = ('center')
         self.resposta.pack()
 
-        self.aviso = Label(self.quadrante2)
+        self.aviso = Label(self.bloco2)
         self.aviso['font'] = ('Courier New','11','bold')
         self.aviso['pady'] = 15
         self.aviso['fg'] = '#ff0000'
         self.aviso['bg'] = '#99ccff'
         self.aviso.pack(side=BOTTOM)
 
-        self.quadrante3 = Frame(master)
-        self.quadrante3['bg'] = '#99ccff'
-        self.quadrante3.pack()
+        self.bloco3 = Frame(master)
+        self.bloco3['bg'] = '#99ccff'
+        self.bloco3.pack()
 
-        self.confirma = Button(self.quadrante3)
+        self.confirma = Button(self.bloco3)
         self.confirma['width'] = 10
         self.confirma['text'] = 'Confirmar'
         self.confirma['font'] = ('Calibri','12','bold')
@@ -202,7 +202,7 @@ class Aplicativo:
         self.confirma['command'] = self.enviaResposta
         self.confirma.pack(pady=(10,30))
 
-        self.proximo = Button(self.quadrante3)
+        self.proximo = Button(self.bloco3)
         self.proximo['width'] = 10
         self.proximo['text'] = 'Próxima >>'
         self.proximo['font'] = ('Calibri','12','bold')
@@ -213,7 +213,7 @@ class Aplicativo:
         self.proximo['command'] = self.proximaMensagem
         self.proximo.pack(side=RIGHT,padx=(0,15))
 
-        self.anterior = Button(self.quadrante3)
+        self.anterior = Button(self.bloco3)
         self.anterior['width'] = 10
         self.anterior['text'] = '<< Anterior'
         self.anterior['font'] = ('Calibri','12','bold')
@@ -224,11 +224,11 @@ class Aplicativo:
         self.anterior['command'] = self.anteriorMensagem
         self.anterior.pack(side=LEFT,padx=(15,0))
 
-        self.quadrante4 = Frame(master)
-        self.quadrante4['bg'] = '#99ccff'
-        self.quadrante4.pack()
+        self.bloco4 = Frame(master)
+        self.bloco4['bg'] = '#99ccff'
+        self.bloco4.pack()
 
-        self.termina = Button(self.quadrante4)
+        self.termina = Button(self.bloco4)
         self.termina['width'] = 20
         self.termina['text'] = 'Finalizar Teste'
         self.termina['font'] = ('Calibri','12','bold')
@@ -239,13 +239,13 @@ class Aplicativo:
         self.termina['command'] = self.finalizaTeste
         self.termina.pack(pady=(100,10))
 
-        self.barrinha = Label(self.quadrante4, text=''.join(self.barra))
+        self.barrinha = Label(self.bloco4, text=''.join(self.barra))
         self.barrinha['fg'] = '#00264d'
         self.barrinha['bg'] = '#99ccff'
         self.barrinha['font'] = ('Courier New', '10')
         self.barrinha.pack(pady=(10,70))
 
-        self.progresso = Label(self.quadrante4, text= str(self.pos) + '/' + str(len(self.mensagens)))
+        self.progresso = Label(self.bloco4, text= str(self.pos) + '/' + str(len(self.mensagens)))
         self.progresso['font'] = ('Courier New','10','italic')
         self.progresso['bg'] = '#99ccff'
         self.progresso.pack()
@@ -258,25 +258,25 @@ class Aplicativo:
 
     def ultimaPagina(self,master=None):
 
-        self.quadrante1.destroy()
+        self.bloco1.destroy()
         self.pergunta.destroy()
         self.status.destroy()
-        self.quadrante2.destroy()
+        self.bloco2.destroy()
         self.resposta.destroy()
         self.aviso.destroy()
-        self.quadrante3.destroy()
+        self.bloco3.destroy()
         self.confirma.destroy()
         self.proximo.destroy()
         self.anterior.destroy()
-        self.quadrante4.destroy()
+        self.bloco4.destroy()
         self.termina.destroy()
         self.barrinha.destroy()
         self.progresso.destroy()
 
-        self.quadro1 = Frame(master)
-        self.quadro1.pack()
+        self.bloco1 = Frame(master)
+        self.bloco1.pack()
 
-        self.despedida = Label(self.quadro1)
+        self.despedida = Label(self.bloco1)
         self.despedida['bg'] = '#99ccff'
         self.despedida['pady'] = 250
         self.despedida['text'] = 'Obrigado por realizar o teste!\nSeus resultados estão em uma pasta\nlocalizada junto com seu aplicativo.'
