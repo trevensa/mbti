@@ -44,6 +44,36 @@ def corrigeResposta(resposta):
 #---------------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------------
+#Função responsável por criar uma pasta no mesmo lugar em que se localiza o aplicativo
+#Além disso, abre um arquivo de texto dentro desta pasta onde serão armazenados os resultados do usuário
+
+def criaPasta(nome_arquivo):
+
+    caminho_pasta = os.getcwd()
+    nome_pasta = 'Resultados Teste MBTI'
+
+    try:
+
+        os.mkdir(f'{caminho_pasta}\{nome_pasta}')
+        introducao(caminho_pasta,nome_pasta,tipos)
+
+    except FileExistsError:
+
+        pass
+
+    arq_existe = os.path.isfile(f'{caminho_pasta}\{nome_pasta}\{nome_arquivo}.txt')
+
+    if arq_existe:
+
+        return 'EXISTE'
+
+    f = open(f'{caminho_pasta}\{nome_pasta}\{nome_arquivo}.txt','w')
+
+    return f
+
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
 #Criação de uma classe 'Aplicativo' que contém a interface do teste
 
 class Aplicativo:
