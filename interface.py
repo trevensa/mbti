@@ -532,11 +532,13 @@ class Aplicativo:
 
         self.instrucoes2 = Label(self.bloco1)
         self.instrucoes2['font'] = ('Courier New','12')
-        self.instrucoes2['bg'] = '#99ccff'
+        self.instrucoes2['bg'] = '#ffffff'
+        self.instrucoes2['borderwidth'] = 5
+        self.instrucoes2['relief'] = 'ridge'
         self.instrucoes2['pady'] = 10
         self.instrucoes2['padx'] = 30
         self.instrucoes2['justify'] = 'left'
-        self.instrucoes2['text'] = 'O teste é composto de 72 questões, as quais você\ndeve responder um número de -2 a 2 com base\nna frequência em que você realiza o que está escrito.\n\nLegenda:\n\n-2 = Raramente\n-1 = Ocasionalmente\n0 = Neutro\n1 = Comumente\n2 = Muito frequentemente\n\nTente ser honesto com as respostas mesmo que elas te\ndesagradem ou te envergonhem de alguma forma.\nVale ressaltar que, nesses casos, geralmente\na resposta verdadeira é aquela que você sente\ndesconforto em pensar.\n\nBom teste!\n\n\n'
+        self.instrucoes2['text'] = 'O teste é composto de 72 questões, as quais você\ndeve responder um número de -2 a 2 com base\nna frequência em que você realiza o que está escrito.\n\nLegenda:\n\n-2 = Raramente\n-1 = Ocasionalmente\n0 = Neutro\n1 = Comumente\n2 = Muito frequentemente\n\nTente ser honesto com as respostas mesmo que elas te\ndesagradem ou te envergonhem de alguma forma.\nVale ressaltar que, nesses casos, geralmente\na resposta verdadeira é aquela que você sente\ndesconforto em pensar.\n\nBom teste!'
         self.instrucoes2.pack(side=BOTTOM)
 
         self.bloco2 = Frame(master)
@@ -552,7 +554,7 @@ class Aplicativo:
         self.comecar['cursor'] = 'hand2'
         self.comecar['bg'] = '#cce6ff'
         self.comecar['command'] = self.terceiraPagina
-        self.comecar.pack()
+        self.comecar.pack(pady=(25,0))
 
 #---------------------------------------------------------------------------------------------
 
@@ -862,7 +864,7 @@ class Aplicativo:
 
         if f == 'EXISTE':
 
-            self.aviso['text'] = 'Já existe um arquivo com esse nome. Selecione outro.'
+            self.aviso['text'] = 'Já existe um arquivo com esse nome. Insira outro nome.'
             self.nome.delete(first='0',last='end')
 
         else:
