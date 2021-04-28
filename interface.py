@@ -42,6 +42,24 @@ def pegaPerguntas():
 #---------------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------------
+#Função que divide os itens de uma lista dada em 2 linhas (coloca um '\n' perto do meio)
+
+def quebraPergunta(perguntas):
+
+    for i in range(len(perguntas)):
+
+        index = perguntas[i].index(' ',int(len(perguntas[i])/2))
+
+        p1 = perguntas[i][:index]
+        p2 = perguntas[i][index+1:]
+
+        perguntas[i] = p1 + '\n' + p2
+
+    return perguntas
+
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
 #Função responsável por verificar se a resposta digitada é válida ou não
 
 def corrigeResposta(resposta):
