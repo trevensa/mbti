@@ -6,6 +6,35 @@ from datetime import date, datetime
 #https://www.invertexto.com/simbolos-para-copiar
 
 #---------------------------------------------------------------------------------------------
+#Função que ativada quando o botão 'Enter' for pressionado
+#Verifica qual das caixas de texto possui informação e executa o método de acordo com isso
+
+def enterPressionado():
+
+    try:
+    
+        resposta = APP.resposta.get()
+        pagina = APP.n_pagina.get()
+
+        if resposta != '' and pagina == '':
+
+            APP.enviaResposta()
+
+        elif resposta == '' and pagina != '':
+
+            APP.pulaPagina()
+
+        elif resposta != '' and pagina != '':
+
+            APP.aviso['text'] = 'Remova o valor de uma das caixas de resposta.'
+
+    except:
+
+        pass
+
+#---------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------
 #Função que confere se o número da página digitado é uma página de verdade
 
 def conferePagina(pagina):
@@ -967,11 +996,13 @@ class Aplicativo:
 #Definição do nome do teste e do tamanho da janela
 
 root = Tk()
-Aplicativo(root)
+APP = Aplicativo(root)
 root.title('Teste MBTI')
 root.geometry('1000x600')
 root.maxsize(1000,600)
 root.configure(bg='#99ccff')
+root.bind('<KP_Enter>',lambda x: enterPressionado())
+root.bind('<Return>',lambda y: enterPressionado())
 root.mainloop()
 
 #---------------------------------------------------------------------------------------------
