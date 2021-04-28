@@ -196,13 +196,22 @@ def escreveCabecalho(nome_arquivo,f):
     pessoa = colocaMaiusculo(nome_arquivo)
 
     f.write(f'Olá, {pessoa}!\n')
-    f.write(f'No dia {data} às {horario} você realizou o teste. Os resultados do mesmo estão neste arquivo.\n\n')
+    f.write(f'No dia {data} às {horario} você realizou o teste. Os resultados do mesmo estão neste arquivo.\n')
 
+#---------------------------------------------------------------------------------------------
+
+def escreveBackup(escritas,perguntas,f):
+
+    f.write('\n\n-------------------------------------------------------------------------------\n')
     f.write('Este é o backup das perguntas e de suas respostas:\n')
     f.write('-------------------------------------------------------------------------------')
     f.write('\n')
 
-#---------------------------------------------------------------------------------------------
+    for p in range(len(perguntas)):
+
+        f.write(f'{perguntas[p][:-6]}| {escritas[p]}\n')
+
+    f.write('-------------------------------------------------------------------------------')
 
 #---------------------------------------------------------------------------------------------
 #Função que 'traduz' o ponto do usuário para a palavra associada àquele valor
@@ -232,6 +241,7 @@ def traduzPontos(pontos):
 def contabilizaPontos(perguntas,respostas,f):
 
     funcoes = {'Si': 0, 'Se': 0, 'Ni': 0, 'Ne': 0, 'Ti': 0, 'Te': 0, 'Fi': 0, 'Fe': 0}
+    escritas = []
 
     for linha in range(len(perguntas)):
 
@@ -241,16 +251,15 @@ def contabilizaPontos(perguntas,respostas,f):
 
         pontos = int(respostas[linha])
         escrita = traduzPontos(pontos)
+        escritas.append(escrita)
 
         funcoes[adc] += pontos
 
         if abs(pontos) == 2:
 
             funcoes[rem] -= pontos
-
-        f.write(f'{pergunta}| {escrita}\n')
     
-    return funcoes
+    return funcoes, escritas
 
 #---------------------------------------------------------------------------------------------
 
@@ -259,8 +268,7 @@ def contabilizaPontos(perguntas,respostas,f):
 
 def escrevePontos(funcoes,f):
 
-    f.write('-------------------------------------------------------------------------------\n\n')
-    f.write('Esses foram os seus resultados:\n\n')
+    f.write('\nEsses foram os seus resultados:\n\n')
 
     for item in funcoes:
 
@@ -479,9 +487,10 @@ def analisaPontos(funcoes,f):
 def analisaResultados(nome_arquivo,perguntas,respostas,f):
 
     escreveCabecalho(nome_arquivo,f)
-    funcoes = contabilizaPontos(perguntas,respostas,f)
+    funcoes,escritas = contabilizaPontos(perguntas,respostas,f)
     escrevePontos(funcoes,f)
     analisaPontos(funcoes,f)
+    escreveBackup(escritas,perguntas,f)
 
 #---------------------------------------------------------------------------------------------
 
