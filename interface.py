@@ -779,6 +779,17 @@ class Aplicativo:
         self.aviso['bg'] = '#99ccff'
         self.aviso.pack()
 
+        self.reinicia = Button(self.bloco1)
+        self.reinicia['width'] = 20
+        self.reinicia['text'] = 'Refazer o Teste'
+        self.reinicia['font'] = ('Calibri','12','bold')
+        self.reinicia['bd'] = 3
+        self.reinicia['relief'] = 'raised'
+        self.reinicia['cursor'] = 'hand2'
+        self.reinicia['bg'] = '#cce6ff'
+        self.reinicia['command'] = self.reiniciaTeste
+        self.reinicia.pack(side=BOTTOM,pady=(25,25))
+
         self.envia_nome = Button(self.bloco1)
         self.envia_nome['width'] = 20
         self.envia_nome['text'] = 'Escolher Nome'
@@ -937,6 +948,7 @@ class Aplicativo:
         self.nome.destroy()
         self.aviso.destroy()
         self.envia_nome.destroy()
+        self.reinicia.destroy()
 
         self.__init__()
 
