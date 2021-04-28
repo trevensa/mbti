@@ -596,6 +596,8 @@ class Aplicativo:
         
             self.mensagens[w] = self.mensagens[w][:-6]
 
+        self.mensagens = quebraPergunta(self.mensagens)
+
         self.respostas = []
         self.barra = []
 
@@ -613,7 +615,7 @@ class Aplicativo:
 
         self.pergunta = Label(self.bloco1, text=self.mensagens[self.k])
         self.pergunta['pady'] = 25
-        self.pergunta['font'] = ('Century Gothic','10','bold')
+        self.pergunta['font'] = ('Century Gothic','18','bold')
         self.pergunta['bg'] = '#99ccff'
         self.pergunta.pack()
 
@@ -717,7 +719,7 @@ class Aplicativo:
         self.barrinha['fg'] = '#00264d'
         self.barrinha['bg'] = '#99ccff'
         self.barrinha['font'] = ('Courier New', '8')
-        self.barrinha.pack(pady=(10,35))
+        self.barrinha.pack(pady=(10,5))
 
         self.progresso = Label(self.bloco4, text= str(self.k+1) + '/' + str(len(self.mensagens)))
         self.progresso['font'] = ('Courier New','10','italic')
