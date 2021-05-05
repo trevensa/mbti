@@ -969,7 +969,6 @@ class Aplicativo:
         self.respostas[self.k] = pontos
         self.barra[self.k] = self.barra[self.k].replace('☐','☑')
         self.atualizaInfos()
-        self.proximaMensagem()
 
 #---------------------------------------------------------------------------------------------
 
