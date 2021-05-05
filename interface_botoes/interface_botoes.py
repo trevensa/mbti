@@ -651,6 +651,7 @@ class Aplicativo:
 
         self.k = 0
         self.perguntas = pegaPerguntas()
+        #self.perguntas = ['feijao: $Si$Se','batata: $Fe$Fi','manga: $Ti$Te']
         self.mensagens = self.perguntas[:]
 
         for w in range (len(self.mensagens)):
@@ -689,16 +690,6 @@ class Aplicativo:
         self.bloco2 = Frame(master)
         self.bloco2['bg'] = '#99ccff'
         self.bloco2.pack()
-
-        self.opcao0 = Radiobutton(self.bloco2)
-        self.opcao0['text'] = '-'
-        self.opcao0['font'] = ('Courier New','11','bold')
-        self.opcao0['command'] = self.selecionaBotao
-        self.opcao0['variable'] = self.v
-        self.opcao0['value'] = 5
-        self.opcao0['bg'] = '#99ccff'
-        self.opcao0['state'] = 'disabled'
-        self.opcao0.pack(side=LEFT, padx=20)
 
         self.opcao1 = Radiobutton(self.bloco2)
         self.opcao1['text'] = 'Raramente'
@@ -806,7 +797,8 @@ class Aplicativo:
 
         self.bloco5 = Frame(master)
         self.bloco5['bg'] = '#99ccff'
-        self.bloco5.pack()
+        self.bloco5['height'] = 35
+        self.bloco5.pack(pady=30)
 
         self.termina = Button(self.bloco5)
         self.termina['width'] = 20
@@ -817,15 +809,20 @@ class Aplicativo:
         self.termina['cursor'] = 'hand2'
         self.termina['bg'] = '#cce6ff'
         self.termina['command'] = self.finalizaTeste
-        self.termina.pack(pady=(25,30))
+        self.termina.pack()
+        self.termina.pack_forget()
 
-        self.barrinha = Label(self.bloco5, text=''.join(self.pos_barra))
+        self.bloco6 = Frame(master)
+        self.bloco6['bg'] = '#99ccff'
+        self.bloco6.pack()
+
+        self.barrinha = Label(self.bloco6, text=''.join(self.pos_barra))
         self.barrinha['fg'] = '#00264d'
         self.barrinha['bg'] = '#99ccff'
         self.barrinha['font'] = ('Courier New', '8')
-        self.barrinha.pack(pady=(10,5))
+        self.barrinha.pack()
 
-        self.progresso = Label(self.bloco5, text= str(self.k+1) + '/' + str(len(self.mensagens)))
+        self.progresso = Label(self.bloco6, text= str(self.k+1) + '/' + str(len(self.mensagens)))
         self.progresso['font'] = ('Courier New','10','italic')
         self.progresso['bg'] = '#99ccff'
         self.progresso.pack(pady=(60,0))
@@ -842,7 +839,6 @@ class Aplicativo:
         self.pergunta.destroy()
         self.status.destroy()
         self.bloco2.destroy()
-        self.opcao0.destroy()
         self.opcao1.destroy()
         self.opcao2.destroy()
         self.opcao3.destroy()
@@ -860,6 +856,7 @@ class Aplicativo:
         self.n_pagina.destroy()
         self.ir.destroy()
         self.bloco5.destroy()
+        self.bloco6.destroy()
 
         self.bloco1 = Frame(master)
         self.bloco1['bg'] = '#99ccff'
@@ -867,9 +864,9 @@ class Aplicativo:
 
         self.despedida = Label(self.bloco1)
         self.despedida['bg'] = '#99ccff'
-        self.despedida['text'] = 'Obrigado por realizar o teste!\nSeus resultados estão em uma pasta\nlocalizada junto com seu aplicativo.\n\nDigite seu nome:'
+        self.despedida['text'] = 'Obrigado por realizar o teste!\nSeus resultados estarão em uma pasta\nlocalizada junto com seu aplicativo.\nDentro dela, haverá um arquivo com seus resultados.\n\nPara isso, digite seu nome:'
         self.despedida['font'] = ('Century Gothic','20','bold')
-        self.despedida.pack(pady=(100,50))
+        self.despedida.pack(pady=(75,50))
 
         self.nome = Entry(self.bloco1)
         self.nome['width'] = 25
@@ -923,7 +920,7 @@ class Aplicativo:
 
         if self.respostas[self.k] == '':
 
-            valor = 5
+            valor = None
         
         else:
 
@@ -968,6 +965,12 @@ class Aplicativo:
         pontos = self.v.get()
         self.respostas[self.k] = pontos
         self.barra[self.k] = self.barra[self.k].replace('☐','☑')
+
+        vazios = self.respostas.count('')
+        if vazios == 0:
+
+            self.termina.pack()
+
         self.atualizaInfos()
 
 #---------------------------------------------------------------------------------------------
