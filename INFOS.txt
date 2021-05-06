@@ -40,7 +40,7 @@ Você valoriza hierarquia e a considera vital para a eficiência e funcionamento
 Antes de eficiência, vem o bem-estar coletivo: $Fe$Te
 Você percebe e pega para você sentimentos alheios, sendo muito empático e solidário: $Fe$Ti
 Você é impulsivo e acaba agindo sem pensar nas consequências: $Se$Ni
-Você se garante na porrada com alguém: $Se$Ni
+Você prefere viver o momento e senti-lo da maneira como ele vem, aproveitando cada instante: $Se$Ni
 Você se pega pensando profundamente no futuro e projetando planos futuros bem estruturados a ponto de esquecer do presente: $Ni$Se
 Seu pensamento, apesar de lógico, acaba sendo subjetivo e ausentando dados e provas concretas: $Ti$Fe
 Busca atividades que lhe façam sentir próximo e conectado com os outros: $Fe$Ti
