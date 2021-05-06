@@ -1,5 +1,5 @@
 Você possui um senso de dever e responsabilidade com suas tarefas: $Si$Ne
-Você prefere uma análise interna de situações ao invés de uma análise mais ampla: $Ti$Fe
+Você prefere uma análise interna de situações ao invés de uma análise mais ampla: $Ti$Te
 Seus valores se direcionam para o coletivo e priorizam a harmonia social: $Fe$Fi
 Você prefere explorar o conceito interno e a essência das coisas ao invés de se contentar somente com dados: $Ti$Te
 Você gosta de explorar novas experiências sensoriais que aguçam seus 5 sentidos e te fazem sentir adrenalina: $Se$Ni
@@ -37,7 +37,7 @@ Você possui habilidade quando se trata de interpretar e desenvolver simbolismos
 Você consegue visualizar um potencial abstrato a partir de uma ideia ou coisa já existente: $Ne$Si
 Um cheiro, som ou imagem é capaz de te teletransportar para alguma memória sua, mesmo que não seja marcante: $Si$Ne
 Você valoriza hierarquia e a considera vital para a eficiência e funcionamento de uma sociedade: $Te$Fi
-Antes de eficiência, vem o bem-estar coletivo: $Fe$Ti
+Antes de eficiência, vem o bem-estar coletivo: $Fe$Te
 Você percebe e pega para você sentimentos alheios, sendo muito empático e solidário: $Fe$Ti
 Você é impulsivo e acaba agindo sem pensar nas consequências: $Se$Ni
 Você se garante na porrada com alguém: $Se$Ni
