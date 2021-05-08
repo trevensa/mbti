@@ -53,7 +53,7 @@ Você monta uma linha de raciocínio muito bem estruturada na sua cabeça, mas e
 Você gosta de viver o presente e sente dificuldade de traçar planos futuros: $Se$Ni
 Você tem dificuldades em compreender e seguir as normas sociais: $Ti$Fe
 Ao se deparar com um problema, você visualiza diversas formas de solucioná-lo: $Ne$Si
-Você encontra dificuldade em lidar com sistemas externos: $Fi$Te
+Você encontra dificuldade em lidar com sistemas externos (dificuldade de entender e fazer parte de sistemas políticos, econômicos e sociais): $Fi$Te
 Você tem dificuldade em se conectar com os seus 5 sentidos e a vivência no presente, se distanciando socialmente: $Ni$Se
 Explicar sua lógica para alguém não é seu ponto forte: $Ti$Te
 Sua organização mental de suas ideias é clara: $Te$Fi
