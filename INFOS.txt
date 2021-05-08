@@ -1,5 +1,5 @@
 Você possui um senso de dever e responsabilidade com suas tarefas: $Si$Ne
-Você prefere uma análise interna da situação ao invés de olhar para o conetxto em que ela está inserida: $Ti$Te
+Você prefere uma análise interna da situação ao invés de olhar para o contexto em que ela está inserida: $Ti$Te
 Seus valores se direcionam para o coletivo e priorizam a harmonia social: $Fe$Fi
 Você prefere explorar o conceito interno e a essência das coisas ao invés de se contentar somente com dados: $Ti$Te
 Você gosta de explorar novas experiências sensoriais que aguçam seus 5 sentidos e te fazem sentir adrenalina: $Se$Ni
@@ -42,7 +42,7 @@ Você percebe e pega para você sentimentos alheios, sendo muito empático e sol
 Você é impulsivo e acaba agindo sem pensar nas consequências: $Se$Ni
 Você prefere viver o momento e senti-lo da maneira como ele vem, aproveitando cada instante: $Se$Ni
 Você se pega pensando profundamente no futuro e projetando planos futuros bem estruturados a ponto de esquecer do presente: $Ni$Se
-Seu pensamento, apesar de lógico, acaba sendo subjetivo e ausentando dados e provas concretas: $Ti$Fe
+Seu pensamento, apesar de lógico, acaba sendo subjetivo e ausentando dados concretos (sua interpretação vem antes de provas concretas): $Ti$Fe
 Busca atividades que lhe façam sentir próximo e conectado com os outros: $Fe$Ti
 Você possui poder manipulativo emocional e sente que pode usá-lo em situações para fazer outras pessoas se sentirem culpadas: $Fe$Ti
 Você não consegue manter foco em uma atividade constante por muito tempo sem se distrair com novas ideias: $Ne$Si
