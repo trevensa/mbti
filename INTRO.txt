@@ -1,0 +1,39 @@
+Olá! Este arquivo contém uma base acerca do conteúdo de MBTI!
+
+Esta teoria conta com 16 tipos de personalidade, onde cada uma delas possui 4 funções cognitivas:
+	- Função  esta função é a mais presente em sua personalidade e portanto a mais utilizada por você 
+	- Função  esta função, como o próprio nome diz, tem como objetivo "auxiliar" a dominanTe  equilibrando as decisões tomadas por ela 
+      	- Função  esta função possui um grau de desenvolvimento mais baixo e portanto pode apresentar um comportamento mais imaturo
+      	- Função  por fim, esta função é a menos desenvolvida dentre as 4 e é uma função que você encontra dificuldade de colocar em ação
+
+Existem 8 possibilidades de função cognitiva, sendo elas: 
+	- Si: Sensação Introvertida
+	- Se: Sensação Extrovertida
+	- Ni: Intuição Introvertida
+	- Ne: Intuição Extrovertida
+	- Fi: Sentimento Introvertido
+	- Fe: Sentimento Extrovertido
+	- Ti: Pensamento Introvertido
+	- Te: Pensamento Extrovertido
+
+Cada personalidade possui uma combinação diferente de 4 dessas funções. Veja:
+
+	ISFJ: Si Fe Ti Ne
+        ISTJ: Si Te Fi Ne
+        INFJ: Ni Fe Ti Se
+        INTJ: Ni Te Fi Se
+        ESFJ: Fe Si Ne Ti
+        ESTJ: Te Si Ne Fi
+        ENFJ: Fe Ni Se Ti
+        ENTJ: Te Ni Se Fi
+        ISFP: Fi Se Ni Te
+        ISTP: Ti Se Ni Fe
+        INFP: Fi Ne Si Te
+        INTP: Ti Ne Si Fe
+        ESFP: Se Fi Te Ni
+        ESTP: Se Ti Fe Ni
+        ENFP: Ne Fi Te Si
+        ENTP: Ne Ti Fe Si
+
+OBS.: A ordem das funções da esquerda pra direita é: Dominante | Auxiliar | Terciária | Inferior
+
