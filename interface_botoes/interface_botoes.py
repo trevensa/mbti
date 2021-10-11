@@ -4,6 +4,7 @@ from datetime import date, datetime
 
 #https://www.w3schools.com/colors/colors_picker.asp
 #https://www.invertexto.com/simbolos-para-copiar
+#pyinstaller interface_botoes.py --onefile --windowed --distpath . --icon iconeteste.ico --name TesteDeMBTI
 
 #---------------------------------------------------------------------------------------------
 #Função que chama o método de voltar para a pergunta anterior
@@ -259,7 +260,7 @@ def contabilizaPontos(perguntas,respostas,f):
 
         funcoes[adc] += pontos
 
-        if abs(pontos) == 2:
+        if pontos == 2:
 
             funcoes[rem] -= pontos
     
@@ -535,6 +536,13 @@ class Aplicativo:
         self.bloco2 = Frame(master)
         self.bloco2['bg'] = '#99ccff'
         self.bloco2.pack()
+
+        self.copyright = Label(self.bloco2)
+        self.copyright['text'] = 'Feito por Mateus Henrique Trevensoli Travagin'
+        self.copyright['font'] = ('Rockwell','10')
+        self.copyright['bg'] = '#99ccff'
+        self.copyright['padx'] = 200
+        self.copyright.pack(pady=(100,0))
 
 #---------------------------------------------------------------------------------------------
 
