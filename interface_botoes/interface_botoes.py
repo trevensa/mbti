@@ -515,7 +515,7 @@ class Aplicativo:
         self.bloco1.pack()
 
         self.bemvindo = Label(self.bloco1)
-        self.bemvindo['text'] = 'Bem-Vindo ao teste de MBTI!'
+        self.bemvindo['text'] = 'Bem-Vindo ao teste de MBTI-Tipologia de Jung!'
         self.bemvindo['font'] = ('Rockwell','20','bold')
         self.bemvindo['bg'] = '#99ccff'
         self.bemvindo['pady'] = 200
@@ -538,7 +538,7 @@ class Aplicativo:
         self.bloco2.pack()
 
         self.copyright = Label(self.bloco2)
-        self.copyright['text'] = 'Feito por Mateus Henrique Trevensoli Travagin'
+        self.copyright['text'] = 'Feito por Mateus Henrique Trevensoli Travagin e João Henri Carrenho Rocha'
         self.copyright['font'] = ('Rockwell','10')
         self.copyright['bg'] = '#99ccff'
         self.copyright['padx'] = 200
@@ -826,9 +826,9 @@ class Aplicativo:
 
         self.despedida = Label(self.bloco1)
         self.despedida['bg'] = '#99ccff'
-        self.despedida['text'] = 'Obrigado por realizar o teste!\nSeus resultados estarão em uma pasta\nlocalizada junto com seu aplicativo.\nDentro dela, haverá um arquivo com seus resultados.\n\nPara isso, digite seu nome:'
+        self.despedida['text'] = 'Obrigado por realizar o teste!\nPara salvar seus resultados, digite seu nome e clique\nem "Escolher Nome". Feito isso, seus resultados estarão\nem uma pasta localizada junto com seu aplicativo.\nDentro dela, haverá um arquivo com seus resultados.\n\nDigite seu nome aqui:'
         self.despedida['font'] = ('Century Gothic','20','bold')
-        self.despedida.pack(pady=(75,50))
+        self.despedida.pack(pady=(50,50))
 
         self.nome = Entry(self.bloco1)
         self.nome['width'] = 25
@@ -1027,7 +1027,7 @@ class Aplicativo:
 
 root = Tk()
 APP = Aplicativo(root)
-root.title('Teste MBTI')
+root.title('Teste MBTI-Tipologia de Jung')
 root.geometry('1000x600')
 root.maxsize(1000,600)
 root.configure(bg='#99ccff')
